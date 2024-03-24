@@ -1,0 +1,85 @@
+<script lang="ts" setup>
+  const slides = [
+    {
+      img: 'our-services_elevator.png',
+      text: 'Техническое обслуживание лифтов'
+    },
+    {
+      img: 'our-services_escalator.png',
+      text: 'Техническое обслуживание эскалаторов'
+    },
+    {
+      img: 'our-services_platform.png',
+      text: 'Техническое обслуживание платформ подъемных'
+    },
+    {
+      img: 'our-services_equipment.png',
+      text: 'Эксплуатация подъемного оборудования'
+    }
+  ]
+</script>
+
+<template>
+  <section class="main-wrapper uslugi-block">
+    <h2>Наши услуги</h2>
+
+    <Swiper
+        :modules="[SwiperAutoplay]"
+        :slides-per-view="3"
+        :effect="'creative'"
+        :autoplay="{
+            delay: 8000,
+            disableOnInteraction: true,
+        }"
+        :creative-effect="{
+            prev: {
+                shadow: false,
+                translate: ['-20%', 0, -1],
+            },
+            next: {
+                translate: ['100%', 0, 0],
+            },
+        }"
+    >
+      <SwiperSlide
+          class="swiper-slide"
+          v-for="(slide, i) in slides"
+          :key="i"
+      >
+        <nuxt-img :src="slide.img" alt="" />
+        <p>{{ slide.text }}</p>
+      </SwiperSlide>
+    </Swiper>
+  </section>
+</template>
+
+
+<style scoped>
+  .uslugi-block {
+    padding: 64px 0;
+
+    h2 {
+      font-size: 36px;
+      padding-bottom: 48px;
+      color: var(--title-text-color)
+    }
+
+    .swiper-slide {
+      cursor: pointer;
+
+      p {
+        max-width: 350px;
+        padding-top: 20px;
+        font-size: 20px;
+        line-height: 1.3;
+        font-weight: 600;
+        color: #6366F1
+      }
+    }
+
+    :deep(.swiper-wrapper) {
+      align-self: center;
+      cursor: pointer;
+    }
+  }
+</style>
