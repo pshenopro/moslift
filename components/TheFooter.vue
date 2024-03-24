@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-  import Vk from './icons/Vk.vue'
-  import Dzen from './icons/Dzen.vue'
-  import YouTube from './icons/YouTube.vue'
-  import Telgr from './icons/Telgr.vue'
+  import Vk from '../assets/icons/Vk.vue'
+  import Dzen from '../assets/icons/Dzen.vue'
+  import YouTube from '../assets/icons/YouTube.vue'
+  import Telgr from '../assets/icons/Telgr.vue'
 
   const footer = [
     {

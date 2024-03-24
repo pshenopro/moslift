@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   import { ref } from "@vue/reactivity"
 
-  import Arrow from '/components/icons/Arrow.vue'
+  import Arrow from '/assets/icons/Arrow.vue'
 
   const slides = [
     {

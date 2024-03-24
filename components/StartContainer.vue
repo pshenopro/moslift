@@ -1,11 +1,11 @@
 <script setup>
   import { ref } from "@vue/reactivity"
 
-    import Arrow from '~/components/icons/arrow.vue'
-    import Vk from '~/components/icons/Vk.vue'
-    import Dzen from '~/components/icons/Dzen.vue'
-    import YouTube from '~/components/icons/YouTube.vue'
-    import Telgr from '~/components/icons/Telgr.vue'
+    import Arrow from '../assets/icons/arrow.vue'
+    import Vk from '../assets/icons/Vk.vue'
+    import Dzen from '../assets/icons/Dzen.vue'
+    import YouTube from '../assets/icons/YouTube.vue'
+    import Telgr from '../assets/icons/Telgr.vue'
 
     const slides = [
         {
