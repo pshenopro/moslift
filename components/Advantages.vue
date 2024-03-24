@@ -24,32 +24,32 @@
 
     const dataAdvantage= [
         {
-            img: '/_nuxt/assets/img/advantage-house.svg',
+            img: 'advantage-house.svg',
             title: '10+ лет на рынке',
             text: 'Модтфил-Сервис имеет большой опыт в техническом обслуживании лифтов. Мы используем самые передовые технологии'
         },
         {
-            img: '/_nuxt/assets/img/advantage-people.svg',
+            img: 'advantage-people.svg',
             title: 'Команда профессионалов',
             text: 'Наша команда – квалифицированные специалисты, с большим опытом работы с лифтовым оборудованием'
         },
         {
-            img: '/_nuxt/assets/img/advantage-done.svg',
+            img: 'advantage-done.svg',
             title: 'Качество и безопасность',
             text: 'Мы гарантируем качество и безопасность работы при обслуживании лифтов и следуем всем нормативным требованиям'
         },
         {
-            img: '/_nuxt/assets/img/advantage-user.svg',
+            img: 'advantage-user.svg',
             title: 'Индивидуальный подход',
             text: 'Мы предлагаем индивидуальные решения, в зависимости от требований и потребностей наших клиентов'
         },
         {
-            img: '/_nuxt/assets/img/advantage-search.svg',
+            img: 'advantage-search.svg',
             title: 'Прозрачность',
             text: 'Предоставляем всю необходимую информацию о выполненных работах, состоянии лифтов и рекомендациях по их обслуживанию'
         },
         {
-            img: '/_nuxt/assets/img/advantage-ok.svg',
+            img: 'advantage-ok.svg',
             title: 'Доверие клиентов',
             text: 'Мы строим долгосрочные отношения с нашими клиентами, основанные на взаимном доверии и партнерстве'
         }
@@ -80,7 +80,7 @@
                     :key="title"
                     class="advantages-block__item"
                 >
-                    <img :src="img" alt="">
+                    <nuxt-img :src="img" alt="" />
                     <h4 class="title">{{ title }}</h4>
                     <p class="text">{{ text }}</p>
                 </div>
