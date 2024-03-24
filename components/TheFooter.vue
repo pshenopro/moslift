@@ -1,9 +1,4 @@
 <script lang="ts" setup>
-  import Vk from '../assets/icons/Vk.vue'
-  import Dzen from '../assets/icons/Dzen.vue'
-  import YouTube from '../assets/icons/YouTube.vue'
-  import Telgr from '../assets/icons/Telgr.vue'
-
   const footer = [
     {
       title: 'Компания',
