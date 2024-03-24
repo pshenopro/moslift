@@ -46,7 +46,7 @@
           v-for="(slide, i) in slides"
           :key="i"
       >
-        <nuxt-img :src="slide.img" alt="" />
+        <img :src="'img/' + slide.img" alt="" />
         <p>{{ slide.text }}</p>
       </SwiperSlide>
     </Swiper>

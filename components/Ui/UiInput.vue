@@ -22,7 +22,7 @@ const valueInput = ref('')
       <sup v-if="required" style="color:red">*</sup>
     </label>
     <div class="input">
-      <nuxt-img v-if="icon && !valueInput.length" class="icon" src="address-Icon.svg" />
+      <img v-if="icon && !valueInput.length" class="icon" src="img/address-Icon.svg" />
       <input
           v-model="valueInput"
           type="text"

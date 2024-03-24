@@ -25,7 +25,7 @@ const dialog = ref(false)
         </p>
       </div>
 
-      <nuxt-img class="about-pic" src="about-page.png" alt="О нас" />
+      <img class="about-pic" src="img/about-page.png" alt="О нас" />
     </div>
 
     <div class="about-callback">

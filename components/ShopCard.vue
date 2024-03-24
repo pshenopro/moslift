@@ -12,7 +12,7 @@
 
 <template>
   <div class="item-card">
-    <nuxt-img :src="src" />
+    <img :src="'img/' + src" />
 
     <div class="item-card__text">
       <h6>{{ text }}</h6>

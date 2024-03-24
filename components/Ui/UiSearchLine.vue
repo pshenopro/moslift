@@ -11,7 +11,7 @@ const emit = defineEmits(['update:modelValue'])
 
 <template>
   <div class="input">
-    <nuxt-img src="Icon-search.svg" />
+    <img src="img/Icon-search.svg" />
     <input
         class="input-search"
         type="text"
