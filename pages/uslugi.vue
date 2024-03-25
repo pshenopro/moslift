@@ -59,7 +59,7 @@
       >
         <h2>{{ slide.title }}</h2>
         <div class="swiper-slide">
-          <img :src="'img/' + slide.img" alt="" />
+          <img :src="'/img/' + slide.img" alt="" />
           <div class="swiper-slide__text">
             <p>{{ slide.text }}</p>
 

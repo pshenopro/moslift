@@ -62,7 +62,7 @@
         <div class="main-wrapper">
             <div class="count-wrapper">
                 <div v-for="{img, title, text} in dataStats" :key="img" class="count-item">
-                    <img :src="'img/' + img" alt="" />
+                    <img :src="'/img/' + img" alt="" />
                     <div>
                         <h3>{{ title }}</h3>
                         <p>{{ text }}</p>
@@ -80,7 +80,7 @@
                     :key="title"
                     class="advantages-block__item"
                 >
-                    <img :src="'img/' + img" alt="" />
+                    <img :src="'/img/' + img" alt="" />
                     <h4 class="title">{{ title }}</h4>
                     <p class="text">{{ text }}</p>
                 </div>

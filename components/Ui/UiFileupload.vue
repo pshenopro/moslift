@@ -80,7 +80,7 @@ onUnmounted(() => {
   <div v-if="files.length">
     <div v-for="file of files" :key="file.id" class="file-ready">
       <div>
-        <img src="img/file.svg" /> {{ file.file.name }}
+        <img src="/img/file.svg" /> {{ file.file.name }}
       </div>
 
       <Button remove small @click="removeFile(file)">Удалить</Button>
@@ -101,7 +101,7 @@ onUnmounted(() => {
     <label for="file-input">
       <span v-if="active" />
       <div v-else class="file-input-wrapper">
-        <img src="img/upload.svg" />
+        <img src="/img/upload.svg" />
           <div class="file-input__text">
             <span>Загрузите</span> или перетащите файл резюме
           </div>

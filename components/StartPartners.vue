@@ -40,7 +40,7 @@
             v-for="(slide, i) in slides"
             :key="i"
         >
-          <img :src="'img/' + slide" alt="" />
+          <img :src="'/img/' + slide" alt="" />
         </SwiperSlide>
       </Swiper>
     </div>

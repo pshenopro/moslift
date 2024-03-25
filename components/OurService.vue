@@ -46,7 +46,7 @@
           v-for="(slide, i) in slides"
           :key="i"
       >
-        <img :src="'img/' + slide.img" alt="" />
+        <img :src="'/img/' + slide.img" alt="" />
         <p>{{ slide.text }}</p>
       </SwiperSlide>
     </Swiper>
