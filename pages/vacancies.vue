@@ -18,7 +18,7 @@
       <div class="vacancies-page__info">
         <h1>Присоединяйся к нашей команде!</h1>
         <p>Мы всегда поисках новых талантов. Напишите нам, если хотели бы сотрудничать </p>
-        <img src="img/vacancies-page.png" />
+        <img src="/img/vacancies-page.png" />
       </div>
 
       <div class="vacancies-page__list">
