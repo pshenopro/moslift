@@ -13,8 +13,7 @@ export default defineNuxtConfig({
   modules: [
     'vuetify-nuxt-module',
     '@nuxtjs/google-fonts',
-    'nuxt-swiper',
-    '@nuxt/image'
+    'nuxt-swiper'
   ],
   components: [
     {
@@ -34,8 +33,5 @@ export default defineNuxtConfig({
     families: {
       Inter: [200, 400, 500, 600, 700]
     }
-  },
-  image: {
-    dir: 'assets/img',
   }
 })
