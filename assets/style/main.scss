@@ -8,6 +8,10 @@
   --disabled: #A3A3A3;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .main-wrapper {
   max-width: 100%;
   width: 1216px;
@@ -85,4 +89,8 @@
     font-size: 12px;
     line-height: 1.2;
   }
+}
+
+.pointer {
+  cursor: pointer;
 }

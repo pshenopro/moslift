@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.0.0",
+    "nuxt-anchorscroll": "^1.0.3",
     "sass": "^1.71.1",
     "typescript": "5.0.4",
     "vuetify-nuxt-module": "^0.12.0"

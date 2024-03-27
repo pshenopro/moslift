@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, reactive, computed } from "@vue/reactivity";
+  import { ref } from "@vue/reactivity";
 
   const openMakeRequest = ref(false)
   const openCallback = ref(false)
@@ -14,10 +14,10 @@
 
             <div class="main-nav-routes">
                 <NuxtLink to="/">Главная</NuxtLink>
-                <NuxtLink to="/uslugi">Услуги</NuxtLink>
+                <NuxtLink :to="{ path:'/',  hash: '#uslugi' }" :external="true">Услуги</NuxtLink>
                 <NuxtLink to="/about">О нас</NuxtLink>
                 <NuxtLink to="/shop">Магазин</NuxtLink>
-                <NuxtLink to="/">Контакты</NuxtLink>
+                <NuxtLink :to="{ hash: '#contact' }" :external="true">Контакты</NuxtLink>
                 <NuxtLink to="/vacancies">Вакансии</NuxtLink>
             </div>
 

@@ -2,25 +2,29 @@
   const slides = [
     {
       img: 'our-services_elevator.png',
-      text: 'Техническое обслуживание лифтов'
+      text: 'Техническое обслуживание лифтов',
+      link: '/elevator-maintenance'
     },
     {
       img: 'our-services_escalator.png',
-      text: 'Техническое обслуживание эскалаторов'
+      text: 'Техническое обслуживание эскалаторов',
+      link: '/escalator-maintenance'
     },
     {
       img: 'our-services_platform.png',
-      text: 'Техническое обслуживание платформ подъемных'
+      text: 'Техническое обслуживание платформ подъемных',
+      link: '/lifting-service'
     },
     {
       img: 'our-services_equipment.png',
-      text: 'Эксплуатация подъемного оборудования'
+      text: 'Эксплуатация подъемного оборудования',
+      link: '/elevator-equipment'
     }
   ]
 </script>
 
 <template>
-  <section class="main-wrapper uslugi-block">
+  <section id="uslugi" class="main-wrapper uslugi-block">
     <h2>Наши услуги</h2>
 
     <Swiper
@@ -47,7 +51,7 @@
           :key="i"
       >
         <img :src="'/img/' + slide.img" alt="" />
-        <p>{{ slide.text }}</p>
+        <NuxtLink :to="slide.link" class="slide-link">{{ slide.text }}</NuxtLink>
       </SwiperSlide>
     </Swiper>
   </section>
@@ -67,13 +71,21 @@
     .swiper-slide {
       cursor: pointer;
 
-      p {
+      .slide-link {
+        display: block;
         max-width: 350px;
         padding-top: 20px;
         font-size: 20px;
         line-height: 1.3;
         font-weight: 600;
-        color: #6366F1
+        color: var(--title-text-color);
+        cursor: pointer;
+        text-decoration: none;
+        transition: all .3s;
+
+        &:hover {
+          color: #6366F1
+        }
       }
     }
 
