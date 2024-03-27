@@ -2,14 +2,8 @@
     import { ref } from "@vue/reactivity"
 
     const slides = [
-        {
-            text: 'Комплексное <br /> обслуживание лифтов <br />и эскалаторов',
-            img: 'img/start-slide-1.png'
-        },
-        {
-            text: 'Комплексное <br /> обслуживание лифтов <br />и эскалаторов',
-            img: 'img/start-slide-1.png'
-        },
+        'img/start-slide-1.png',
+        'img/start-slide-1.png'
     ]
 
     const openMakeRequest = ref(false)
@@ -18,6 +12,7 @@
 
 <template>
     <Swiper
+        class="swiper"
         :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperNavigation]"
         :slides-per-view="1"
         :loop="true"
@@ -45,35 +40,30 @@
             v-for="(slide, i) in slides"
             :key="i"
             :style="{
-                'background-image': `url(${slide.img})`
+                'background-image': `url(${slide})`
             }"
-        >
-            <div class="main-wrapper">
-                <h2 v-html="slide.text" />
-                <div class="slider-bts">
-                    <Button primary @click="openMakeRequest = true">Оформить заявку</Button>
-                    <Button third @click="openCallback = true">Заказать звонок</Button>
-                </div>
+        />
 
-                <div class="swiper-nav">
-                    <div class="nav-inner">
-                        <div class="swiper-button-prev">
-                            <Arrow />
-                        </div>
-                        <div class="swiper-button-next">
-                            <Arrow />
-                        </div>
-                    </div>
-                </div>
+      <div class="main-wrapper">
+        <h2 v-html="'Комплексное <br /> обслуживание лифтов <br />и эскалаторов'" />
+        <div class="slider-bts">
+          <Button primary @click="openMakeRequest = true">Оформить заявку</Button>
+          <Button third @click="openCallback = true">Заказать звонок</Button>
+        </div>
 
-                <div class="social-wrapper">
-                    <a href="" target="_blanc"><Dzen /></a>
-                    <a href="" target="_blanc"><Vk /></a>
-                    <a href="" target="_blanc"><YouTube /></a>
-                    <a href="" target="_blanc"><Telgr /></a>
-                </div>
+        <div class="swiper-nav">
+          <div class="nav-inner">
+            <div class="swiper-button-prev">
+              <Arrow />
             </div>
-        </SwiperSlide>
+            <div class="swiper-button-next">
+              <Arrow />
+            </div>
+          </div>
+        </div>
+
+        <SocialIcons class="social-wrapper" />
+      </div>
     </Swiper>
 
   <MakeRequest
@@ -88,43 +78,59 @@
 </template>
 
 <style lang="scss" scoped>
+    .swiper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .social-wrapper {
         position: absolute;
         left: auto;
         right: auto;
         bottom: 90px;
         z-index: 999;
+    }
+
+    .main-wrapper {
+      position: absolute;
+      top: 0;
+      height: 712px;
+      display: flex;
+      flex-direction: column;
+      z-index: 9999;
+      justify-content: center;
+
+      h2 {
+        padding-top: 130px;
+        font-family: 'Inter';
+        font-size: 52px;
+        font-weight: 700;
+        line-height: 56px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: #fff;
+        padding-bottom: 40px;
+      }
+
+      .slider-bts {
         display: flex;
-        justify-content: space-between;
-        width: 144px;
+
+        button:first-child {
+          margin-right: 20px;
+        }
+      }
     }
 
     .swiper-slide {
         display: flex;
         align-items: center;
+        width: 100%;
         height: 712px;
         background: black;
         background-repeat: no-repeat;
         background-size: cover;
-
-        h2 {
-            font-family: 'Inter';
-            font-size: 52px;
-            font-weight: 700;
-            line-height: 56px;
-            letter-spacing: -0.02em;
-            text-align: left;
-            color: #fff;
-            padding-bottom: 40px;
-        }
-
-        .slider-bts {
-            display: flex;
-
-            button:first-child {
-                margin-right: 20px;
-            }
-        }
     }
 
     .swiper-nav {

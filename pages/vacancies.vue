@@ -30,7 +30,7 @@
           </div>
         </div>
 
-        <Button third bg="#6366F1" color="#fff" @click="dialog=true">Откликнуться</Button>
+        <Button class="mt16" third bg="#6366F1" color="#fff" @click="dialog=true">Откликнуться</Button>
       </div>
     </div>
   </div>
@@ -110,11 +110,63 @@
       max-width: 490px;
       padding-top: 10px;
 
+      &-count {
+        transition: all .3s;
+      }
+
       &-item {
         display: flex;
         justify-content: space-between;
         width: 100%;
         padding-bottom: 30px;
+        transition: all .3s;
+
+        &:hover {
+          .vacancies-page__list-count {
+            background: #6366f1;
+            color: #fff;
+          }
+        }
+      }
+
+      &-text {
+        position: relative;
+        cursor: pointer;
+        transition: all .3s;
+
+        &::before,
+        &::after {
+          content: '';
+          height: 14px;
+          width: 14px;
+          position: absolute;
+          transition: all .3s ease;
+          opacity: 0;
+        }
+
+        &:hover:before,
+        &:hover:after {
+          transform: translate(0,0);
+          opacity: 1;
+        }
+
+        &::before {
+          content: '';
+          right: 0;
+          top: 0;
+          border-top: 3px solid #6366f1;
+          border-right: 3px solid #6366f1;
+          transform: translate(-100%, 50%);
+        }
+
+        &::after {
+          content: '';
+          left: -20px;
+          bottom: -20px;
+          border-bottom: 3px solid #6366f1;
+          border-left: 3px solid #6366f1;
+          transform: translate(100%, -50%)
+        }
       }
 
       &-count {

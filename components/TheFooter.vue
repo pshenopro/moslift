@@ -8,15 +8,15 @@
       links: [
         {
           text: 'О нас',
-          href: ''
+          href: '/about'
         },
         {
           text: 'Вакансии',
-          href: ''
+          href: '/vacancies'
         },
         {
           text: 'Магазин',
-          href: ''
+          href: '/shop'
         }
       ]
     },
@@ -110,12 +110,7 @@
       </div>
 
       <div class="footer-social">
-        <div class="footer-social__items">
-          <a href="" target="_blanc"><Dzen /></a>
-          <a href="" target="_blanc"><Vk /></a>
-          <a href="" target="_blanc"><YouTube /></a>
-          <a href="" target="_blanc"><Telgr /></a>
-        </div>
+        <SocialIcons class="social-wrapper" />
 
         <p>
           © {{ new Date().getFullYear() }} Modtfil service. Все права сохранены
