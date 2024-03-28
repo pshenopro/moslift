@@ -22,13 +22,18 @@
       </div>
 
       <div class="vacancies-page__list">
-        <div v-for="({title, text}, i) in VacList" class="vacancies-page__list-item">
+        <NuxtLink
+            v-for="({title, text, path}, i) in VacList"
+            class="vacancies-page__list-item"
+            :to="path"
+            :key="i"
+        >
           <div class="vacancies-page__list-count">{{ i + 1 }}</div>
           <div class="vacancies-page__list-text">
             <h6>{{ title }}</h6>
             <p>{{ text }}</p>
           </div>
-        </div>
+        </NuxtLink>
 
         <Button class="mt16" third bg="#6366F1" color="#fff" @click="dialog=true">Откликнуться</Button>
       </div>
@@ -120,6 +125,7 @@
         width: 100%;
         padding-bottom: 30px;
         transition: all .3s;
+        text-decoration: none;
 
         &:hover {
           .vacancies-page__list-count {
