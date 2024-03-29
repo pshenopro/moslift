@@ -126,7 +126,7 @@ const data = reactive({
       <UiSelect
           v-model="data.usluga"
           label="Услуга или товар"
-          :options="[...UslugiList, ...items.map(el => el.text)]"
+          :options="[...UslugiList.map(el => el.title), ...items.map(el => el.text)]"
           :placeholder="'Не указана'"
       />
 

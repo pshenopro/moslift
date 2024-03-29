@@ -59,7 +59,7 @@ const modal = computed(() => {
         <UiSelect
             v-model="data.usluga"
             label="Услуга"
-            :options="UslugiList"
+            :options="UslugiList.map(el => el.title)"
             placeholder="Не указана"
         />
 

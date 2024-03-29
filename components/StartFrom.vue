@@ -8,7 +8,7 @@ import { UslugiList } from '/constants'
     firstname: '',
     textArea: '',
     usluga: '',
-    uslugaItems: UslugiList,
+    uslugaItems: UslugiList.map(el => el.title),
     nameRules: [
       value => {
         if (value) return true

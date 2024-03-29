@@ -6,28 +6,30 @@
 </script>
 
 <template>
-    <header class="main-wrapper">
-        <nav class="main-nav">
+    <header>
+        <div class="main-wrapper">
+          <nav class="main-nav">
             <NuxtLink to="/">
-                <HeaderLogo />
+              <HeaderLogo />
             </NuxtLink>
 
             <div class="main-nav-routes">
-                <NuxtLink to="/">Главная</NuxtLink>
-                <NuxtLink :to="{ path:'/',  hash: '#uslugi' }" :external="true">Услуги</NuxtLink>
-                <NuxtLink to="/about">О нас</NuxtLink>
-                <NuxtLink to="/shop">Магазин</NuxtLink>
-                <NuxtLink :to="{ hash: '#contact' }" :external="true">Контакты</NuxtLink>
-                <NuxtLink to="/vacancies">Вакансии</NuxtLink>
+              <NuxtLink to="/">Главная</NuxtLink>
+              <NuxtLink :to="{ path:'/',  hash: '#uslugi' }" :external="true">Услуги</NuxtLink>
+              <NuxtLink to="/about">О нас</NuxtLink>
+              <NuxtLink to="/shop">Магазин</NuxtLink>
+              <NuxtLink :to="{ hash: '#contact' }" :external="true">Контакты</NuxtLink>
+              <NuxtLink to="/vacancies">Вакансии</NuxtLink>
             </div>
 
             <div class="main-nav-btns">
-                <Button primary small @click="openMakeRequest = true">Оформить заявку</Button>
-                <Button second small @click="openCallback = true">Заказать звонок</Button>
+              <Button primary small @click="openMakeRequest = true">Оформить заявку</Button>
+              <Button second small @click="openCallback = true">Заказать звонок</Button>
             </div>
 
             <SecondLogo />
-        </nav>
+          </nav>
+        </div>
     </header>
 
     <MakeRequest
@@ -42,6 +44,11 @@
 </template>
 
 <style lang="scss" scoped>
+    header {
+      width: 100%;
+      box-shadow: 0px 7px 20px 6px #0000001c;
+    }
+
     .main-nav {
         width: 100%;
         display: flex;

@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <div class="main-wrapper">
+  <section class="main-wrapper">
     <template v-if="!data">
       <h2>Ошибка</h2>
     </template>
@@ -19,7 +19,7 @@
       <p>{{ data.desc }}</p>
       <Button primary>Откликнуться</Button>
     </template>
-  </div>
+  </section>
 </template>
 
 <style scoped>

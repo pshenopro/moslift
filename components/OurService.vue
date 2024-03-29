@@ -1,26 +1,5 @@
 <script lang="ts" setup>
-  const slides = [
-    {
-      img: 'our-services_elevator.png',
-      text: 'Техническое обслуживание лифтов',
-      link: '/elevator-maintenance'
-    },
-    {
-      img: 'our-services_escalator.png',
-      text: 'Техническое обслуживание эскалаторов',
-      link: '/escalator-maintenance'
-    },
-    {
-      img: 'our-services_platform.png',
-      text: 'Техническое обслуживание платформ подъемных',
-      link: '/lifting-service'
-    },
-    {
-      img: 'our-services_equipment.png',
-      text: 'Эксплуатация подъемного оборудования',
-      link: '/elevator-equipment'
-    }
-  ]
+import { UslugiList } from '/constants'
 </script>
 
 <template>
@@ -47,11 +26,11 @@
     >
       <SwiperSlide
           class="swiper-slide"
-          v-for="(slide, i) in slides"
+          v-for="(slide, i) in UslugiList"
           :key="i"
       >
-        <img :src="'/img/' + slide.img" alt="" />
-        <NuxtLink :to="slide.link" class="slide-link">{{ slide.text }}</NuxtLink>
+        <img :src="'/img/' + slide.imgStartPage" alt="" />
+        <NuxtLink :to="slide.path" class="slide-link">{{ slide.title }}</NuxtLink>
       </SwiperSlide>
     </Swiper>
   </section>
