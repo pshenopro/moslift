@@ -2,7 +2,14 @@
 import { defineNuxtConfig } from 'nuxt/config'
 import { resolve } from 'path'
 
+const path = require('path')
+
 export default defineNuxtConfig({
+  nitro: {
+    output: {
+      publicDir: path.join(__dirname, '/dist')
+    }
+  },
   alias: {
     "@": resolve(__dirname, "/")
   },
