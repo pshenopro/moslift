@@ -5,11 +5,12 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "start": "node .output/server/index.mjs",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test": "nuxi dev --host 0.0.0.0",
-    "start": "cross-env HOST=0.0.0.0 cross-env PORT=5000 node .output/server/index.mjs"
+    "start2": "cross-env HOST=0.0.0.0 cross-env PORT=5000 node .output/server/index.mjs"
   },
   "dependencies": {
     "@nuxt/image": "^1.4.0",

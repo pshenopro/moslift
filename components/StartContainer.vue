@@ -1,10 +1,7 @@
 <script setup>
     import { ref } from "@vue/reactivity"
 
-    const slides = [
-        'img/start-slide-1.png',
-        'img/start-slide-1.png'
-    ]
+    const slides = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 
     const openMakeRequest = ref(false)
     const openCallback = ref(false)
@@ -40,9 +37,11 @@
             v-for="(slide, i) in slides"
             :key="i"
             :style="{
-                'background-image': `url(${slide})`
+                'background-image': `url(/img/start-slide-${slide}.png)`
             }"
-        />
+        >
+            <div class="drop-shadow-img" />
+      </SwiperSlide>
 
       <div class="main-wrapper">
         <h2 v-html="'Комплексное <br /> обслуживание лифтов <br />и эскалаторов'" />
@@ -91,6 +90,13 @@
         right: auto;
         bottom: 90px;
         z-index: 999;
+    }
+
+    .drop-shadow-img {
+      width: 100%;
+      height: 100%;
+      background: rgb(0,0,0);
+      background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.43883490896358546) 17%, rgba(255,255,255,0) 35%);
     }
 
     .main-wrapper {
