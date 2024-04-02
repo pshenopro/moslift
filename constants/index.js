@@ -36,24 +36,12 @@ export const UslugiList = [
 
 export const VacList = [
   {
-    id: 'installer',
-    title: 'Монтажник',
-    text: 'Get the Designship app on your Android or iOS mobile device and sign up instantly.',
-    path: '/vacancies/installer',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus eos, fugit hic magni nihil perferendis sequi. A ad, aliquid beatae cumque delectus deleniti distinctio dolorum expedita explicabo fuga fugit illum laboriosam minus modi numquam omnis pariatur possimus praesentium quas quia quisquam repudiandae sequi sint tempore vel vero voluptas voluptatem!'
-  },
-  {
-    id: 'admin',
-    title: 'Администратор',
-    text: 'Get the Designship app on your Android or iOS mobile device and sign up instantly.',
-    path: '/vacancies/admin',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus eos, fugit hic magni nihil perferendis sequi. A ad, aliquid beatae cumque delectus deleniti distinctio dolorum expedita explicabo fuga fugit illum laboriosam minus modi numquam omnis pariatur possimus praesentium quas quia quisquam repudiandae sequi sint tempore vel vero voluptas voluptatem!'
-  },
-  {
-    id: 'lawyer',
-    title: 'Юрист',
-    text: 'Get the Designship app on your Android or iOS mobile device and sign up instantly.',
-    path: '/vacancies/lawyer',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus eos, fugit hic magni nihil perferendis sequi. A ad, aliquid beatae cumque delectus deleniti distinctio dolorum expedita explicabo fuga fugit illum laboriosam minus modi numquam omnis pariatur possimus praesentium quas quia quisquam repudiandae sequi sint tempore vel vero voluptas voluptatem!'
+    id: 'electro',
+    title: 'Электромеханик по лифтам',
+    text: 'Техническое обслуживание лифтового оборудования отечественного и импортного производства;',
+    path: '/vacancies/electro',
+    desc: '<h6>Обязанности</h6><ul><li>Техническое обслуживание лифтового оборудования отечественного и импортного производства</li><li>Поиск и устранение технической неисправности</li><li>Текущий ремонт лифтового оборудования</li><li>Ведение документации на объекте</li></ul>' +
+      '<h6>Требования</h6><ul><li>Техническое образование</li><li>Обязателен опыт работы в аналогичной должности от 3 лет</li><li>Наличие группы по электробезопасности (будет преимуществом)</li><li>Наличие свидетельства о квалификации ЦОК (будет преимуществом)</li><li>Наличие прав категории В (будет преимуществом)</li></ul>' +
+      '<h6>Условия</h6><ul><li>Возможные графики: 5/2, 2/2 и 1/3 (зависит от объекта)</li><li>Возможность дополнительного заработка за счет доп. работ по ремонту лифтового оборудования (по желанию)</li><li>Предоставляется спецодежда/обувь, СИЗ, инструмент</li><li>Возможность обучения, повышения квалификации с получением соответствующего удостоверения</li><li>Официальное оформление по ТК РФ, оплата отпусков и больничных листов согласно ТК РФ</li><li>Уровень дохода зависит от квалификации, графика работы и объекта</li><li>Работа на объектах города Москвы</li></ul>'
   }
 ]
