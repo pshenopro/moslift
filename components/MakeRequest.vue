@@ -27,6 +27,15 @@
   const modal = computed(() => {
     return props.modalUpdated
   })
+
+  const mail = useMail()
+  const submitMail = () => {
+    mail.send({
+      from: 'John Doe',
+      subject: 'Incredible',
+      text: 'This is an incredible test message',
+    })
+  }
 </script>
 
 <template>
@@ -126,7 +135,7 @@
       />
 
       <div class="btn-wrapper mt16">
-        <Button primary>Откликнуться</Button>
+        <Button primary @click="submitMail">Откликнуться</Button>
         <div class="description">
           Откликаясь на вакансию, я принимаю условия политики конфиденциальности
         </div>
