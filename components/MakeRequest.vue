@@ -1,8 +1,11 @@
 <script lang="ts" setup>
   import { ref, reactive, computed } from "@vue/reactivity";
   import { defineProps, defineEmits } from 'vue'
+  import axios from 'axios'
 
   import { UslugiList } from '/constants'
+
+  // import { useCompiler } from '#vue-email'
 
   interface Props {
     modalUpdated: boolean
@@ -28,13 +31,24 @@
     return props.modalUpdated
   })
 
-  const mail = useMail()
-  const submitMail = () => {
-    mail.send({
-      from: 'John Doe',
-      subject: 'Incredible',
-      text: 'This is an incredible test message',
-    })
+  // const mail = useMail()
+  // const submitMail = () => {
+  //   mail.send({
+  //     from: 'John Doe',
+  //     subject: 'Incredible',
+  //     text: 'This is an incredible test message',
+  //   })
+  // }
+
+  const send = () => {
+    try {
+      axios.post('http://localhost:8080/email', {
+        email: 'nikin-z@yandex.ru',
+        text: 'test test'
+      })
+    } catch (e) {
+      console.log(e)
+    }
   }
 </script>
 
@@ -135,7 +149,7 @@
       />
 
       <div class="btn-wrapper mt16">
-        <Button primary @click="submitMail">Откликнуться</Button>
+        <Button primary @click="send">Откликнуться</Button>
         <div class="description">
           Откликаясь на вакансию, я принимаю условия политики конфиденциальности
         </div>

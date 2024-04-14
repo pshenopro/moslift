@@ -9,7 +9,7 @@
     <header>
         <div class="main-wrapper">
           <nav class="main-nav">
-            <NuxtLink to="/">
+            <NuxtLink class="head-logo" to="/">
               <HeaderLogo />
             </NuxtLink>
 
@@ -55,6 +55,11 @@
         justify-content: space-between;
         align-items: center;
         padding: 34px 0;
+
+      .head-logo {
+        height: 40px;
+        display: block;
+      }
 
         a {
             font-size: 16px;

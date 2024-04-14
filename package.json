@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
-    "start": "node .output/server/index.mjs",
+    "client": "nuxt dev",
+    "start": "concurrently \"node .output/server/index.mjs\" \"node server/index.js\"",
+    "server": "node server/index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -14,10 +16,18 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.4.0",
+    "@vue-email/nuxt": "^0.8.19",
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mailersend": "^2.2.0",
+    "nodemailer": "^6.9.13",
     "nuxt": "^3.10.3",
-    "nuxt-mail": "^5.0.0",
+    "nuxt-mail": "^5.0.1",
     "nuxt-swiper": "^1.2.2",
+    "validator": "^13.11.0",
     "vue": "^3.4.19",
+    "vue-email": "^0.8.11",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {

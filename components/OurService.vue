@@ -29,7 +29,7 @@ import { UslugiList } from '/constants'
           v-for="(slide, i) in UslugiList"
           :key="i"
       >
-        <img :src="'/img/' + slide.imgStartPage" alt="" />
+        <img :src="'/img/uslugi/' + slide.imgId[0]" alt="" />
         <NuxtLink :to="slide.path" class="slide-link">{{ slide.title }}</NuxtLink>
       </SwiperSlide>
     </Swiper>
@@ -49,6 +49,13 @@ import { UslugiList } from '/constants'
 
     .swiper-slide {
       cursor: pointer;
+      img {
+        width: 350px;
+        height: 216px;
+        object-fit: cover;
+        border-radius: 6px;
+        overflow: hidden;
+      }
 
       .slide-link {
         display: block;

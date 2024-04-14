@@ -1,7 +1,7 @@
 <script setup>
     import { ref } from "@vue/reactivity"
 
-    const slides = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    const slides = [2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 
     const openMakeRequest = ref(false)
     const openCallback = ref(false)
@@ -46,7 +46,7 @@
       <div class="main-wrapper">
         <h2 v-html="'Комплексное <br /> обслуживание лифтов <br />и эскалаторов'" />
         <div class="slider-bts">
-          <Button primary @click="openMakeRequest = true">Оформить заявку</Button>
+          <Button primary @click="openMakeRequest = true">Оставить заявку</Button>
           <Button third @click="openCallback = true">Заказать звонок</Button>
         </div>
 

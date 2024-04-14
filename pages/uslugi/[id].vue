@@ -25,6 +25,7 @@ const openCallback = ref(false)
       <h1>{{ data.title }}</h1>
       <div class=" uslugi-wrapper">
         <Swiper
+            class="swiper"
             :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperNavigation]"
             :slides-per-view="1"
             :effect="'Coverflow'"
@@ -52,7 +53,7 @@ const openCallback = ref(false)
               :key="i"
           >
             <div class="swiper-slide">
-              <img :src="'/img/' + slide" alt="" />
+              <img :src="'/img/uslugi/' + slide" alt="" />
             </div>
           </SwiperSlide>
 
@@ -69,7 +70,7 @@ const openCallback = ref(false)
         </Swiper>
 
         <div class="swiper-slide__text">
-          <p>{{ data.desc }}</p>
+          <p v-html="data.desc" />
 
           <div class="swiper-slide__btns">
             <Button primary @click="openMakeRequest = true">Оформить заявку</Button>
@@ -105,12 +106,21 @@ const openCallback = ref(false)
   align-items: center;
 }
 
+.swiper {
+  width: 595px;
+}
+
 .swiper-slide {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 595px;
   width: 100%;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 
   &__wrapper {
     display: block;
