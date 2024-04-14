@@ -91,7 +91,7 @@
 
 <style lang="scss" scoped>
     .advantages-wrapper {
-        widows: 100%;
+        width: 100%;
         background: #FAFAFA;
 
         h2 {
@@ -133,10 +133,22 @@
                 color: var(--second-text-color);
             }
         }
+
+        @media (max-width: 991px) {
+          flex-wrap: wrap;
+          padding: 32px 0;
+
+          .count-item {
+            width: 48%;
+            max-width: none;
+            margin-bottom: 10px;
+          }
+        }
     }
 
     .advantages-block {
-        padding: 64px 0;
+      padding-top: 64px;
+      padding-bottom: 64px;
 
         &__items {
             display: flex;
@@ -165,6 +177,26 @@
                 font-size: 16px;
                 color: var(--second-text-color);
             }
+
+          @media (max-width: 1240px) {
+            max-width: 340px;
+          }
+        }
+
+        @media (max-width: 991px) {
+          padding-top: 32px;
+          padding-bottom: 32px;
+
+          &__item {
+            max-width: none;
+            width: 48%;
+            margin-bottom: 40px;
+            height: 212px;
+
+            &:nth-child(n + 4) {
+              margin-top: 0;
+            }
+          }
         }
     }
 </style>

@@ -9,6 +9,11 @@ import { UslugiList } from '/constants'
     <Swiper
         :modules="[SwiperAutoplay]"
         :slides-per-view="3"
+        :breakpoints="{
+          991: {
+            slidesPerView: 2
+          }
+        }"
         :effect="'creative'"
         :autoplay="{
             delay: 8000,
@@ -39,7 +44,8 @@ import { UslugiList } from '/constants'
 
 <style scoped>
   .uslugi-block {
-    padding: 64px 0;
+    padding-top: 64px;
+    padding-bottom: 64px;
 
     h2 {
       font-size: 36px;
