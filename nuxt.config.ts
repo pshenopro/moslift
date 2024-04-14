@@ -8,9 +8,7 @@ export default defineNuxtConfig({
   modules: [
     'vuetify-nuxt-module',
     '@nuxtjs/google-fonts',
-    'nuxt-swiper',
-    '@vue-email/nuxt',
-    "nuxt-mail"
+    'nuxt-swiper'
   ],
   nitro: {
     output: {
@@ -42,14 +40,5 @@ export default defineNuxtConfig({
     families: {
       Inter: [200, 400, 500, 600, 700]
     }
-  },
-  mail: {
-    message: {
-      to: 'foo@bar.de',
-    },
-    smtp: {
-      host: "smtp.example.com",
-      port: 587,
-    },
   },
 })

@@ -10,12 +10,22 @@
 
 html {
   scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 .main-wrapper {
   max-width: 100%;
   width: 1216px;
   margin: 0 auto;
+
+  @media (max-width: 1240px) {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .pb16 {
@@ -66,6 +76,10 @@ html {
     display: flex;
     justify-content: space-between;
 
+    &-center {
+      align-items: center;
+    }
+
     &.double > *:first-child {
       margin-right: 32px;
     }
@@ -88,6 +102,19 @@ html {
     color: var(--second-text-color);
     font-size: 12px;
     line-height: 1.2;
+  }
+}
+
+.ui-flex-space {
+  display: flex;
+  justify-content: space-between;
+
+  &-center {
+    align-items: center;
+  }
+
+  &.double > *:first-child {
+    margin-right: 32px;
   }
 }
 
