@@ -19,11 +19,25 @@
 
       <Swiper
           :modules="[SwiperAutoplay]"
-          :slides-per-view="7"
+          :slides-per-view="2"
           :effect="'creative'"
           :autoplay="{
             delay: 8000,
             disableOnInteraction: true,
+        }"
+          :breakpoints="{
+          991: {
+            slidesPerView: 7
+          },
+          541: {
+            slidesPerView: 4
+          },
+          430: {
+            slidesPerView: 3
+          },
+          320: {
+            slidesPerView: 2
+          },
         }"
           :creative-effect="{
             prev: {
@@ -57,6 +71,18 @@
       padding-bottom: 64px;
       font-size: 36px;
       font-weight: 800;
+    }
+
+    @media (max-width: 540px) {
+      padding: 32px 0;
+
+      h2 {
+        padding-bottom: 46px;
+      }
+
+      :deep(.swiper-wrapper) {
+        align-items: center;
+      }
     }
   }
 </style>

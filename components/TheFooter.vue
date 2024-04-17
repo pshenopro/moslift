@@ -126,6 +126,7 @@
   >
     <div class="modal-wrapper">
       <h3>Нормативные документы</h3>
+      <div class="close-icon" @click="modal = false">+</div>
 
       <div class="modal-docs">
         <div v-for="item in docs" class="modal-docs__items">
@@ -189,6 +190,43 @@
         font-size: 14px;
       }
     }
+
+    @media (max-width: 991px) {
+      &-item {
+        max-width: 32%;
+        padding-right: 30px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      &-item {
+        max-width: 38%;
+        padding-right: 18px;
+
+        &:first-child {
+          max-width: 18%;
+        }
+      }
+    }
+
+    @media (max-width: 414px) {
+      padding: 32px 0;
+
+      .footer-wrapper {
+        flex-direction: column;
+      }
+
+      &-item {
+        max-width: 100%;
+      }
+
+      .footer-social {
+        padding-top: 20px;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+      }
+    }
   }
 
   .modal-docs {
@@ -232,6 +270,24 @@
       font-weight: 800;
       font-size: 36px;
       padding-bottom: 32px;
+    }
+
+    @media (max-width: 540px) {
+      border-radius: 0;
+      height: 90vh;
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      h3 {
+        font-size: 30px;
+      }
+
+      a {
+        word-break: break-all;
+        padding-right: 20px;
+        text-align: left;
+        width: 80%;
+      }
     }
   }
 </style>

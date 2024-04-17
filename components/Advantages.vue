@@ -144,11 +144,29 @@
             margin-bottom: 10px;
           }
         }
+
+      @media (max-width: 540px) {
+        .count-item {
+          padding: 24px;
+
+          img {
+            margin-right: 16px;
+          }
+        }
+      }
+
+      @media (max-width: 420px) {
+        flex-direction: column;
+
+        .count-item {
+          width: 100%;
+        }
+      }
     }
 
     .advantages-block {
-      padding-top: 64px;
-      padding-bottom: 64px;
+        padding-top: 64px;
+        padding-bottom: 64px;
 
         &__items {
             display: flex;
@@ -195,6 +213,36 @@
 
             &:nth-child(n + 4) {
               margin-top: 0;
+            }
+          }
+        }
+
+        @media (max-width: 540px) {
+          h2 {
+            font-size: 32px;
+            line-height: 40px;
+          }
+
+          &__item {
+            height: auto;
+
+            h4 {
+              height: 90px;
+            }
+          }
+
+          @media (max-width: 420px) {
+            &__items {
+              flex-direction: column;
+            }
+
+            &__item {
+              width: 100%;
+              height: auto;
+
+              h4 {
+                height: auto;
+              }
             }
           }
         }

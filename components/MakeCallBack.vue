@@ -32,6 +32,7 @@ const modal = computed(() => {
   >
     <div class="modal-wrapper">
       <h3>Закажите звонок</h3>
+      <div class="close-icon" @click="$emit('updateModal')">+</div>
 
       <p class="text">
         Оставьте свои контакты и мы свяжется с вами в течение дня

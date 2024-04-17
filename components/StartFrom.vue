@@ -152,5 +152,45 @@ import { UslugiList } from '/constants'
       display: flex;
       justify-content: space-between;
     }
+
+    @media (max-width: 991px) {
+      &__q {
+        max-width: 48%;
+      }
+
+      &__f {
+        max-width: 48%;
+      }
+
+      .form-submit {
+        flex-direction: column;
+
+        p {
+          padding-top: 16px;
+          width: 100%;
+          margin-left: 0;
+        }
+
+        :deep(.v-btn) {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: 540px) {
+      .main-wrapper {
+        flex-direction: column;
+      }
+
+      &__q,
+      &__f {
+        width: 100%;
+        max-width: none;
+      }
+
+      &__f {
+        padding-top: 20px;
+      }
+    }
   }
 </style>

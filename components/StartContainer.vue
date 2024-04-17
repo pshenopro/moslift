@@ -82,6 +82,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @media (max-width: 540px) {
+        height: 600px;
+      }
     }
 
     .social-wrapper {
@@ -125,6 +129,29 @@
 
         button:first-child {
           margin-right: 20px;
+        }
+      }
+
+      @media (max-width: 540px) {
+        height: auto;
+
+        h2 {
+          padding-top: 64px;
+          font-size: 44px;
+          line-height: 44px;
+        }
+
+        .slider-bts {
+          flex-direction: column;
+
+          .v-btn {
+            width: 100%;
+            margin-bottom: 16px;
+          }
+        }
+
+        .social-wrapper {
+          bottom: 0;
         }
       }
     }

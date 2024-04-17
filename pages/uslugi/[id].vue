@@ -195,4 +195,68 @@ const openCallback = ref(false)
     transform: rotate(180deg);
   }
 }
+
+@media (max-width: 1124px) {
+  .swiper {
+    width: 55%;
+  }
+
+  .swiper-slide__wrapper {
+    .swiper-slide {
+      height: 290px;
+
+      img {
+        width: 100%;
+        height: 290px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .uslugi-wrapper {
+    flex-direction: column;
+  }
+
+  .swiper {
+    width: 100%;
+
+    .swiper-slide {
+      max-width: none;
+    }
+  }
+
+  .swiper-slide__wrapper {
+    .swiper-slide {
+      height: 340px;
+      max-width: none;
+
+      img {
+        height: 340px;
+      }
+    }
+  }
+
+  .swiper-slide__text {
+    padding-top: 32px;
+    max-width: none;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 414px) {
+  .swiper-slide__wrapper {
+    .swiper-slide {
+      img {
+        height: 290px;
+      }
+    }
+  }
+
+  .swiper-slide__btns {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
 </style>

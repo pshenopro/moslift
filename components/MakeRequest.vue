@@ -55,11 +55,13 @@
 <template>
   <v-dialog
       v-model="modal"
-      width="768px"
+      width="100%"
+      max-width="768px"
       @update:model-value="$emit('updateModal')"
   >
     <div class="modal-wrapper">
       <h3>Оформите заявку</h3>
+      <div class="close-icon" @click="$emit('updateModal')">+</div>
 
       <p class="text">
         Напишите нам и наши менеджеры свяжутся с вами в течение дня

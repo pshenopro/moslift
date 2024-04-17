@@ -8,10 +8,16 @@ import { UslugiList } from '/constants'
 
     <Swiper
         :modules="[SwiperAutoplay]"
-        :slides-per-view="3"
+        :slides-per-view="1"
         :breakpoints="{
           991: {
+            slidesPerView: 3
+          },
+          640: {
             slidesPerView: 2
+          },
+          320: {
+            slidesPerView: 1
           }
         }"
         :effect="'creative'"
@@ -84,6 +90,14 @@ import { UslugiList } from '/constants'
     :deep(.swiper-wrapper) {
       align-self: center;
       cursor: pointer;
+    }
+
+    @media (max-width: 540px) {
+      .swiper-slide {
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 </style>
