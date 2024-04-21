@@ -85,7 +85,7 @@ const modal = computed(() => {
       <div class="btn-wrapper mt16">
         <Button primary>Заказать звонок</Button>
         <div class="description">
-          Откликаясь на вакансию, я принимаю условия политики конфиденциальности
+          Заказывая звонок, я принимаю условия политики конфиденциальности
         </div>
       </div>
     </div>

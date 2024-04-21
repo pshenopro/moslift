@@ -16,8 +16,8 @@
   <div class="main-wrapper">
     <div class="vacancies-page">
       <div class="vacancies-page__info">
-        <h1>Присоединяйся к нашей команде!</h1>
-        <p>Мы всегда поисках новых талантов. Напишите нам, если хотели бы сотрудничать </p>
+        <h1>Присоединяйся к нам!</h1>
+        <p>Не упусти шанс проявить себя и стать частью нашей команды!</p>
         <img src="/img/vacancies-page.png" />
       </div>
 
@@ -46,6 +46,7 @@
   >
     <div class="modal-wrapper">
       <h3>Откликнуться</h3>
+      <div class="close-icon" @click="dialog = false">+</div>
 
       <p class="text">
         Оставьте своё резюме и мы свяжемся с вами
@@ -109,6 +110,7 @@
     padding: 64px 0;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
     &__list {
       width: 100%;
@@ -221,6 +223,73 @@
 
       img {
         width: 100%;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      &__list {
+        max-width: none;
+        width: 45%;
+      }
+
+      &__info {
+        max-width: none;
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      padding: 32px 0;
+
+      &__info,
+      &__list {
+        width: 100%;
+      }
+
+      &__info {
+        img {
+          height: 276px;
+          object-fit: cover;
+        }
+      }
+
+      &__list {
+        padding-top: 30px;
+      }
+
+      .mt16 {
+        margin-top: 30px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      &__info {
+        p {
+          padding-bottom: 20px;
+        }
+
+        img {
+          height: 246px;
+        }
+      }
+
+      &__list {
+        padding-top: 20px;
+
+        &-text {
+          padding: 15px;
+          border-bottom: 1px solid #6366f1;
+
+          &::after,
+          &::before {
+            content: none;
+          }
+        }
+
+        &-count {
+          display: none;
+        }
       }
     }
   }

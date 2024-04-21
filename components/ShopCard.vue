@@ -27,7 +27,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 280px;
     border: 1px solid #E5E5E5;
     border-radius: 8px;
     box-shadow: 0px 1px 2px 0px #1018280D;

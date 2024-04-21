@@ -53,29 +53,27 @@ const data = reactive({
 </script>
 
 <template>
-  <section class="shop-page">
+  <section class="shop-page main-wrapper">
     <div class="shop-page__header">
-      <div class="main-wrapper">
-        <v-menu
-            :close-on-content-click="false"
-            transition="scale-transition"
-            min-width="200px"
-        >
-          <template v-slot:activator="{ props }">
-            <v-app-bar-nav-icon v-bind="props" /> Все категории
-          </template>
-          <v-list min-width="200px" content-class="shop-page__list">
-            <v-checkbox
-                :label="'Категория ' + n"
-                v-for="n in 5"
-                :key="n"
-                density="compact"
-            />
-          </v-list>
-        </v-menu>
-      </div>
+      <v-menu
+          :close-on-content-click="false"
+          transition="scale-transition"
+          min-width="200px"
+      >
+        <template v-slot:activator="{ props }">
+          <v-app-bar-nav-icon v-bind="props" /> Все категории
+        </template>
+        <v-list min-width="200px" content-class="shop-page__list">
+          <v-checkbox
+              :label="'Категория ' + n"
+              v-for="n in 5"
+              :key="n"
+              density="compact"
+          />
+        </v-list>
+      </v-menu>
     </div>
-    <div class="main-wrapper shop-page__items">
+    <div class="shop-page__items">
       <UiSearchLine
           v-model="searchValue"
           class="mb32"
@@ -179,6 +177,31 @@ const data = reactive({
 
     .v-overlay__content {
       padding: 0 20px;
+    }
+
+    @media (max-width: 1124px) {
+      &__item {
+        grid-template-columns: auto auto auto;
+      }
+    }
+
+    @media (max-width: 991px) {
+      &__item {
+        grid-template-columns: auto auto;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      &__item {
+        grid-template-columns: auto auto;
+      }
+    }
+
+    @media (max-width: 414px) {
+      &__item {
+        grid-template-columns: auto;
+      }
     }
   }
 

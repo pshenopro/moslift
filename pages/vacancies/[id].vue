@@ -1,29 +1,97 @@
 <script setup>
   import { VacList } from '/constants'
-  import { computed } from "@vue/reactivity";
+  import { computed, reactive, ref  } from "@vue/reactivity";
 
   const route = useRoute()
   const router = useRouter()
 
   const data = computed(() => VacList.find(el => el.id === route.params.id))
+
+  const dialog = ref(false)
+  const state = reactive({
+    name: '',
+    email: '',
+    vac: '',
+    comment: ''
+  })
 </script>
 
 <template>
-  <section class="vacancies-id main-wrapper">
-    <template v-if="!data">
-      <h2>Ошибка</h2>
-    </template>
-    <template v-else>
-      <div class="back" @click="router.back()">Назад</div>
-      <h1>{{ data.title }}</h1>
-      <p v-html="data.desc" />
-      <Button primary>Откликнуться</Button>
-    </template>
+  <section class="vacancies-id">
+    <div class="main-wrapper">
+      <template v-if="!data">
+        <h2>Ошибка</h2>
+      </template>
+      <template v-else>
+        <div class="back" @click="router.back()">Назад</div>
+        <h1>{{ data.title }}</h1>
+        <p v-html="data.desc" />
+        <Button primary @click="dialog = true">Откликнуться</Button>
+      </template>
+    </div>
   </section>
+
+  <v-dialog
+      v-model="dialog"
+      width="768px"
+  >
+    <div class="modal-wrapper">
+      <h3>Откликнуться</h3>
+      <div class="close-icon" @click="dialog = false">+</div>
+
+      <p class="text">
+        Оставьте своё резюме и мы свяжемся с вами
+      </p>
+
+      <div class="flex-space double">
+        <UiInput
+            v-model="state.name"
+            label="Как вас зовут?"
+            placeholder="Алексей"
+            required
+            class="mb32"
+        />
+
+        <UiInput
+            v-model="state.email"
+            label="Ваш email"
+            required
+            placeholder="emailsample@domen.ru"
+            class="mb32"
+        />
+      </div>
+
+      <UiSelect
+          v-model="state.vac"
+          label="Вакансия или должность, которую рассматриваете"
+          :options="VacList.map(el => el.title)"
+          :placeholder="'Не указана'"
+      />
+
+      <UiTextarea
+          v-model="state.comment"
+          label="Комментарий"
+          required
+          placeholder="Текст обращения..."
+          cols="5"
+          :count-size="300"
+          class="mb32"
+      />
+
+      <UiFileupload class="file-upload" />
+
+      <div class="btn-wrapper mt16">
+        <Button primary>Откликнуться</Button>
+        <div class="description">
+          Откликаясь на вакансию, я принимаю условия политики конфиденциальности
+        </div>
+      </div>
+    </div>
+  </v-dialog>
 </template>
 
 <style>
-  .vacancies-id.main-wrapper {
+  .vacancies-id {
     padding: 0 0 64px;
 
     .back {
@@ -61,6 +129,10 @@
           font-size: 16px;
         }
       }
+    }
+
+    @media (max-width: 540px) {
+      padding-bottom: 32px;
     }
   }
 </style>

@@ -245,6 +245,15 @@ const openCallback = ref(false)
   }
 }
 
+@media (max-width: 540px) {
+  .uslugi-page {
+    h1 {
+      padding: 32px 0;
+      font-size: 26px;
+    }
+  }
+}
+
 @media (max-width: 414px) {
   .swiper-slide__wrapper {
     .swiper-slide {
@@ -257,6 +266,13 @@ const openCallback = ref(false)
   .swiper-slide__btns {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .uslugi-page {
+    h1 {
+      padding: 20px 0;
+      font-size: 20px;
+    }
   }
 }
 </style>

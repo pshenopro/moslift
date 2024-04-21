@@ -29,8 +29,8 @@ const dialog = ref(false)
     </div>
 
     <div class="about-callback">
-      <h6>Хочешь стать частью Модтфил-Сервис?</h6>
-      <p>Мы всегда новым талантам и будем рады сотрудничеству!</p>
+      <h6>Хочешь стать частью нашей команды?</h6>
+      <p>Мы всегда рады новым талантам и готовы к сотрудничеству.</p>
       <Button class="about-btn" third small @click="dialog = true">Написать</Button>
     </div>
   </div>
@@ -41,6 +41,7 @@ const dialog = ref(false)
   >
     <div class="modal-wrapper">
       <h3>Откликнуться</h3>
+      <div class="close-icon" @click="dialog = false">+</div>
 
       <p class="text">
         Оставьте своё резюме и мы свяжемся с вами
@@ -160,6 +161,42 @@ const dialog = ref(false)
       :deep(.v-btn) {
         width: 98px;
         border: 1px solid #E5E5E5 !important;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      &-pic {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: 991px) {
+      &-page {
+        flex-direction: column;
+      }
+
+      &-pic {
+        padding-top: 20px;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      &-description {
+        max-width: none;
+        margin-right: 0;
+      }
+    }
+
+    @media (max-width: 540px) {
+      &-page {
+        padding: 32px 0;
+      }
+
+      &-description {
+        h1 {
+          padding-bottom: 24px;
+        }
       }
     }
   }
