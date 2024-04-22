@@ -8,7 +8,8 @@ export default defineNuxtConfig({
   modules: [
     'vuetify-nuxt-module',
     '@nuxtjs/google-fonts',
-    'nuxt-swiper'
+    'nuxt-swiper',
+    'nuxt-snackbar'
   ],
   nitro: {
     output: {
@@ -41,4 +42,10 @@ export default defineNuxtConfig({
       Inter: [200, 400, 500, 600, 700]
     }
   },
+  snackbar: {
+    top: true,
+    right: true,
+    duration: 3000,
+    backgroundColor: '#fff'
+  }
 })

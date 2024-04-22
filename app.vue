@@ -7,4 +7,5 @@
 
     <TheFooter />
   </NuxtLayout>
+  <NuxtSnackbar />
 </template>

@@ -24,9 +24,9 @@ server.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }))
 server.post('/email', (req, res) => {
   transporter.sendMail({
     from: 'liftdomservice@mail.ru',
-    to: req.body.email,
-    subject: 'Заявка',
-    text: req.body.text
+    to: 'liftdomservice@mail.ru',
+    subject: req.body.subject,
+    html: req.body.html
   }, (err, info) => {
     if (err) {
       res.status(200).send(err)

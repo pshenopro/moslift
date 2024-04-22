@@ -25,6 +25,7 @@
     "nodemailer": "^6.9.13",
     "nuxt": "^3.10.3",
     "nuxt-mail": "^5.0.1",
+    "nuxt-snackbar": "^1.0.4",
     "nuxt-swiper": "^1.2.2",
     "validator": "^13.11.0",
     "vue": "^3.4.19",

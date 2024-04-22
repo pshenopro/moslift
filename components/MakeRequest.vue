@@ -3,9 +3,10 @@
   import { defineProps, defineEmits } from 'vue'
   import axios from 'axios'
 
-  import { UslugiList } from '/constants'
+  import { UslugiList, parseHtml } from '/constants'
 
-  // import { useCompiler } from '#vue-email'
+  const snackbar = useSnackbar()
+
 
   interface Props {
     modalUpdated: boolean
@@ -31,23 +32,32 @@
     return props.modalUpdated
   })
 
-  // const mail = useMail()
-  // const submitMail = () => {
-  //   mail.send({
-  //     from: 'John Doe',
-  //     subject: 'Incredible',
-  //     text: 'This is an incredible test message',
-  //   })
-  // }
-
   const send = () => {
+    snackbar.add({
+      type: 'info',
+      text: 'Отправление ...'
+    })
+
     try {
       axios.post('http://31.129.43.97:8080/email', {
-        email: 'nikin-z@yandex.ru',
-        text: 'test test'
+        html: parseHtml(data),
+        subject: 'Заявка'
+      })
+
+      snackbar.clear()
+
+      snackbar.add({
+        type: 'success',
+        text: 'Заявка отправлена'
       })
     } catch (e) {
       console.log(e)
+      snackbar.add({
+        type: 'error',
+        text: 'Ошибка'
+      })
+    } finally {
+      emit('updateModal')
     }
   }
 </script>

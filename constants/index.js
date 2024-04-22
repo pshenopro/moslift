@@ -121,7 +121,6 @@ export const UslugiList = [
   }
 ]
 
-
 export const VacList = [
   {
     id: 'electro',
@@ -151,3 +150,28 @@ export const VacList = [
       '<h6>Условия</h6><ul><li>График работы: 5/2 (суббота, воскресенье - выходные дни)</li><li>Предоставляется спецодежда/обувь, СИЗ, инструмент;</li><li>Официальное оформление по ТК РФ, оплата отпусков и больничных листов согласно ТК РФ;</li><li>Разъездной характер работы (по заявкам);</li><li>Работа на объектах города Москвы</li></ul>'
   }
 ]
+
+const locale = {
+  name: 'Как вас зовут',
+  email: 'Ваш email',
+  usluga: 'Услуга',
+  address: 'Расположение объекта',
+  cout: 'Количество единиц',
+  capacity: 'Грузоподъемность',
+  floor: 'Этажность (для лифтов)',
+  marking: 'Марки оборудования',
+  connectionType: 'Тип установленной связи',
+  comment: 'Комментарий'
+}
+
+export const parseHtml = (data) => {
+  let str = ''
+
+  Object.keys(locale).forEach(el => {
+    if (data[el]) {
+      str += `<li>${locale[el]} - ${data[el]}</li>`
+    }
+  })
+
+  return `<ul>${str}</ul>`
+}
