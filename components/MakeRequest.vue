@@ -42,7 +42,7 @@
 
   const send = () => {
     try {
-      axios.post('http://localhost:8080/email', {
+      axios.post('http://31.129.43.97:8080/email', {
         email: 'nikin-z@yandex.ru',
         text: 'test test'
       })
