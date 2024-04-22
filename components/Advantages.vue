@@ -7,18 +7,18 @@
         },
         {
             img: 'project-finish.svg',
-            title: '500+',
-            text: 'Довольных клиентов'
+            title: '100+',
+            text: 'Проектов завершено'
         },
         {
             img: 'search.svg',
-            title: '500+',
-            text: 'Довольных клиентов'
+            title: '100+',
+            text: 'Диагностик проведено'
         },
         {
             img: 'phone.svg',
-            title: '500+',
-            text: 'Довольных клиентов'
+            title: '1500+',
+            text: 'Аварийных вызовов закрыто'
         },
     ]
 
@@ -113,7 +113,8 @@
             align-items: center;
             width: 100%;
             max-width: 280px;
-            padding: 34px 24px;
+            padding: 10px 24px;
+            min-height: 125px;
             background: #fff;
             border-radius: 6px;
             box-shadow: 0px 1px 2px -1px #1018281A;
