@@ -3,6 +3,7 @@ import { ref, reactive, computed } from "@vue/reactivity";
 import { defineProps, defineEmits } from 'vue'
 
 import { UslugiList } from '/constants'
+const sendMail = useMail()
 
 interface Props {
   modalUpdated: boolean
@@ -22,6 +23,14 @@ const data = reactive({
 const modal = computed(() => {
   return props.modalUpdated
 })
+
+const send = async () => {
+  try {
+    await sendMail('Заказать звонок', data)
+  } finally {
+    emit('updateModal')
+  }
+}
 </script>
 
 <template>
@@ -83,7 +92,7 @@ const modal = computed(() => {
       />
 
       <div class="btn-wrapper mt16">
-        <Button primary>Заказать звонок</Button>
+        <Button primary @click="send">Заказать звонок</Button>
         <div class="description">
           Заказывая звонок, я принимаю условия политики конфиденциальности
         </div>

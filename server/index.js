@@ -7,13 +7,14 @@ const port = 8080
 const server = app()
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.mail.ru',
-  port: 465,
-  secure: true,
+  host: 'smtp.ethereal.email',
+  port: 587,
+  secure: false,
   auth: {
-    user: 'liftdomservice@mail.ru',
-    pass: 'PnK5gygstPU1ajAUvvBV'
-  }
+    user: 'shyann.nikolaus@ethereal.email',
+    pass: 'xTBUgjeeg7d1CKpfNe'
+  },
+  tls: { rejectUnauthorized: false }
 })
 
 server.use(app.json())
@@ -23,8 +24,8 @@ server.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }))
 
 server.post('/email', (req, res) => {
   transporter.sendMail({
-    from: 'liftdomservice@mail.ru',
-    to: 'liftdomservice@mail.ru',
+    from: 'shyann.nikolaus@ethereal.email',
+    to: 'nikin-z@yandex.ru',
     subject: req.body.subject,
     html: req.body.html
   }, (err, info) => {
@@ -42,6 +43,6 @@ server.listen(port, function (error) {
   if (error) {
     console.log('Something went wrong', error);
   } else {
-    console.log('Server is listening on port' + port);
+    console.log('Server is listening on port - ' + port);
   }
 })

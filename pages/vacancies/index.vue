@@ -10,6 +10,15 @@
     vac: '',
     comment: ''
   })
+  const sendMail = useMail()
+
+  const send = async () => {
+    try {
+      await sendMail('Резюме', data)
+    } finally {
+      dialog.value = false
+    }
+  }
 </script>
 
 <template>
@@ -90,7 +99,7 @@
       <UiFileupload class="file-upload" />
 
       <div class="btn-wrapper mt16">
-        <Button primary>Откликнуться</Button>
+        <Button primary @click="send">Откликнуться</Button>
         <div class="description">
           Откликаясь на вакансию, я принимаю условия политики конфиденциальности
         </div>
@@ -123,7 +132,6 @@
 
       &-item {
         display: flex;
-        justify-content: space-between;
         width: 100%;
         padding-bottom: 30px;
         transition: all .3s;

@@ -3,6 +3,7 @@ import {reactive, ref} from "@vue/reactivity";
 
   import { VacList } from '/constants'
 
+const sendMail = useMail()
 const dialog = ref(false)
   const data = reactive({
     name: '',
@@ -10,6 +11,14 @@ const dialog = ref(false)
     vac: '',
     comment: ''
   })
+
+const send = async () => {
+  try {
+    await sendMail('Хочешь стать частью нашей команды?', data)
+  } finally {
+    dialog.value = false
+  }
+}
 </script>
 
 <template>
@@ -85,7 +94,7 @@ const dialog = ref(false)
       <UiFileupload class="file-upload" />
 
       <div class="btn-wrapper mt16">
-        <Button primary>Откликнуться</Button>
+        <Button primary @click="send">Откликнуться</Button>
         <div class="description">
           Откликаясь на вакансию, я принимаю условия политики конфиденциальности
         </div>

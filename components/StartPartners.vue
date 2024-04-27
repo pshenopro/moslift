@@ -8,7 +8,16 @@
     'partners-rosatom.png',
     'partners-medsi.png',
     'partners-monarh.png',
-    'partners-city21.png'
+    'partners-city21.png',
+    'fond-project.png',
+    'klinika-fomina.png',
+    'school.png',
+    'oms.png',
+    'monastery.png',
+    '3gs.png',
+    'city-xxi.png',
+    'smart.png'
+
   ]
 </script>
 
@@ -20,9 +29,10 @@
       <Swiper
           :modules="[SwiperAutoplay]"
           :slides-per-view="2"
+          :loop="true"
           :effect="'creative'"
           :autoplay="{
-            delay: 8000,
+            delay: 1500,
             disableOnInteraction: true,
         }"
           :breakpoints="{

@@ -44,7 +44,7 @@
           href: 'https://yandex.ru/maps/-/CDFTuWyR'
         },
         {
-          text: 'тел. 8 968 328 66 70',
+          text: 'тел. +7 968 328-66-70',
           phone: 'tel:+7968 328 66 70'
         },
         {
@@ -254,6 +254,7 @@
       a,
       span {
         display: block;
+        width: max-content;
         font-size: 14px;
         padding-bottom: 12px;
         line-height: 20px;
@@ -285,6 +286,15 @@
       &-item {
         max-width: 32%;
         padding-right: 30px;
+
+        a {
+          width: auto;
+        }
+
+        span {
+          word-break: break-all;
+          width: auto;
+        }
       }
     }
 
@@ -308,6 +318,14 @@
 
       &-item {
         max-width: 100%;
+
+        a {
+          width: max-content;
+        }
+
+        span {
+          width: max-content;
+        }
       }
 
       .footer-social {

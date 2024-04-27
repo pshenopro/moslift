@@ -1,17 +1,13 @@
 <script lang="ts" setup>
   import { ref, reactive, computed } from "@vue/reactivity";
   import { defineProps, defineEmits } from 'vue'
-  import axios from 'axios'
 
-  import { UslugiList, parseHtml } from '/constants'
-
-  const snackbar = useSnackbar()
-
+  import { UslugiList } from '/constants'
 
   interface Props {
     modalUpdated: boolean
   }
-
+  const sendMail = useMail()
   const props = defineProps<Props>()
   const emit = defineEmits(['updateModal'])
 
@@ -32,30 +28,9 @@
     return props.modalUpdated
   })
 
-  const send = () => {
-    snackbar.add({
-      type: 'info',
-      text: 'Отправление ...'
-    })
-
+  const send = async () => {
     try {
-      axios.post('http://31.129.43.97:8080/email', {
-        html: parseHtml(data),
-        subject: 'Заявка'
-      })
-
-      snackbar.clear()
-
-      snackbar.add({
-        type: 'success',
-        text: 'Заявка отправлена'
-      })
-    } catch (e) {
-      console.log(e)
-      snackbar.add({
-        type: 'error',
-        text: 'Ошибка'
-      })
+      await sendMail('Заявка', data)
     } finally {
       emit('updateModal')
     }
@@ -161,9 +136,9 @@
       />
 
       <div class="btn-wrapper mt16">
-        <Button primary @click="send">Откликнуться</Button>
+        <Button primary @click="send">Оставить заявку</Button>
         <div class="description">
-          Откликаясь на заявку, я принимаю условия политики конфиденциальности
+          Оставляя заявку, я принимаю условия политики конфиденциальности
         </div>
       </div>
     </div>
