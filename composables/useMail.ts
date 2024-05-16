@@ -12,7 +12,7 @@ export const useMail = () => {
     })
 
     try {
-      await axios.post('http://localhost:8080/email', {
+      await axios.post('http://31.129.43.97:8080/email', {
         html: parseHtml(data),
         subject
       })
@@ -24,6 +24,7 @@ export const useMail = () => {
         text: 'Заявка отправлена'
       })
     } catch (e) {
+      snackbar.clear()
       console.log(e)
       snackbar.add({
         type: 'error',
