@@ -7,6 +7,7 @@
   interface Props {
     modalUpdated: boolean
   }
+
   const sendMail = useMail()
   const props = defineProps<Props>()
   const emit = defineEmits(['updateModal'])

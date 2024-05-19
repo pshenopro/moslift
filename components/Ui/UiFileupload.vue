@@ -1,17 +1,19 @@
 <script lang="ts" setup>
 import { reactive, ref } from "@vue/reactivity";
+import { updateFile } from '/composables/useFiles'
 
 const emit = defineEmits(['files-dropped'])
 
 const events = ['dragenter', 'dragover', 'dragleave', 'drop']
 const active = ref(false)
 const files = ref([])
+const filesName = ref([])
 const inActiveTimeout: any = ref(null)
 
-const onDrop = (e) => {
-  setInactive()
-  emit('files-dropped', [...e.dataTransfer.files])
-}
+// const onDrop = (e) => {
+//   setInactive()
+//   emit('files-dropped', [...e.dataTransfer.files])
+// }
 
 const setInactive = () => {
   active.value = false
@@ -22,11 +24,18 @@ const setActive = () => {
 }
 
 const addFiles = (newFiles) => {
+  filesName.value = []
+
   const file = newFiles.dataTransfer.files
   let newUploadableFiles = [...file]
       .map((file) => new UploadableFile(file))
       .filter((file) => !fileExists(file.id))
   files.value = files.value.concat(newUploadableFiles)
+
+  files.value.forEach(el => {
+    updateFile(el.file)
+    filesName.value.push(el.file.name)
+  })
 }
 
 const fileExists = (otherId) => {
@@ -41,6 +50,7 @@ const removeFile = (file) => {
 }
 
 const onInputChange = (e) => {
+  filesName.value = []
   const file = e.target.files
 
   let newUploadableFiles = [...file]
@@ -48,6 +58,11 @@ const onInputChange = (e) => {
       .filter((file) => !fileExists(file.id))
   files.value = files.value.concat(newUploadableFiles)
   e.target.value = null
+
+  files.value.forEach(el => {
+    updateFile(el.file)
+    filesName.value.push(el.file.name)
+  })
 }
 
 class UploadableFile {
