@@ -34,7 +34,7 @@ export const useMail = () => {
             html: parseHtml(data),
             id: Date.now(),
             isRead: false,
-            text: data.comment
+            text: data.comment || ''
           }) });
       })
 
