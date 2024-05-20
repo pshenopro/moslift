@@ -17,7 +17,12 @@ const routes = [
       {
         path: '/mail',
         name: 'mail',
-        component: () => import('./pages/Mail.vue'),
+        component: () => import('./pages/mail/Home.vue')
+      },
+      {
+        path: '/mail/:id',
+        name: 'mail-id',
+        component: () => import('./pages/mail/Id.vue')
       },
       {
         path: '/profile',

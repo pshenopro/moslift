@@ -25,7 +25,7 @@ const router = useRouter()
           <v-list-item prepend-icon="mdi-email-arrow-left" title="Почта" value="mail" @click="router.push('/mail')" />
           <v-list-item prepend-icon="mdi-account-hard-hat" title="Профиль" value="profile" @click="router.push('/profile')" />
           <v-list-item prepend-icon="mdi-account-multiple" title="Роли" value="shared"></v-list-item>
-          <v-list-item prepend-icon="mdi-star" title="Starred" value="starred"></v-list-item>
+          <v-list-item prepend-icon="mdi-star" title="Избранное" value="starred"></v-list-item>
         </v-list>
       </v-navigation-drawer>
     </v-layout>

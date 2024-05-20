@@ -62,6 +62,7 @@ const fetchlogin = async () => {
             v-model="state.password"
             :readonly="state.loading"
             :rules="[required]"
+            type="password"
             label="Password"
             placeholder="Enter your password"
             clearable
