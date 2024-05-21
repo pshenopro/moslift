@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { reactive, ref } from "@vue/reactivity";
-import { updateFile } from '/composables/useFiles'
+import {reactive, ref} from "@vue/reactivity";
+import {updateFile} from '/composables/useFiles'
 
-const emit = defineEmits(['files-dropped'])
+const emit = defineEmits(['files-dropped', 'onChange'])
 
 const events = ['dragenter', 'dragover', 'dragleave', 'drop']
 const active = ref(false)
@@ -16,120 +16,125 @@ const inActiveTimeout: any = ref(null)
 // }
 
 const setInactive = () => {
-  active.value = false
+    active.value = false
 }
 
 const setActive = () => {
-  active.value = true
+    active.value = true
 }
 
 const addFiles = (newFiles) => {
-  filesName.value = []
+    filesName.value = []
 
-  const file = newFiles.dataTransfer.files
-  let newUploadableFiles = [...file]
-      .map((file) => new UploadableFile(file))
-      .filter((file) => !fileExists(file.id))
-  files.value = files.value.concat(newUploadableFiles)
+    const file = newFiles.dataTransfer.files
+    let newUploadableFiles = [...file]
+        .map((file) => new UploadableFile(file))
+        .filter((file) => !fileExists(file.id))
+    files.value = files.value.concat(newUploadableFiles)
 
-  files.value.forEach(el => {
-    updateFile(el.file)
-    filesName.value.push(el.file.name)
-  })
+    files.value.forEach(el => {
+        updateFile(el.file)
+        filesName.value.push(el.file.name)
+    })
+
+    emit('onChange',filesName.value)
 }
 
 const fileExists = (otherId) => {
-  return files.value.some(({ id }) => id === otherId)
+    return files.value.some(({id}) => id === otherId)
 }
 
 const removeFile = (file) => {
-  const index = files.value.indexOf(file)
+    const index = files.value.indexOf(file)
 
-  if (index > -1) files.value.splice(index, 1)
-  if (!files.value?.length) active.value = false
+    if (index > -1) files.value.splice(index, 1)
+    if (!files.value?.length) active.value = false
 }
 
 const onInputChange = (e) => {
-  filesName.value = []
-  const file = e.target.files
+    filesName.value = []
+    const file = e.target.files
 
-  let newUploadableFiles = [...file]
-      .map((file) => new UploadableFile(file))
-      .filter((file) => !fileExists(file.id))
-  files.value = files.value.concat(newUploadableFiles)
-  e.target.value = null
+    let newUploadableFiles = [...file]
+        .map((file) => new UploadableFile(file))
+        .filter((file) => !fileExists(file.id))
+    files.value = files.value.concat(newUploadableFiles)
+    e.target.value = null
 
-  files.value.forEach(el => {
-    updateFile(el.file)
-    filesName.value.push(el.file.name)
-  })
+    files.value.forEach(el => {
+        updateFile(el.file)
+        filesName.value.push(el.file.name)
+    })
+
+    emit('onChange',filesName.value)
 }
 
 class UploadableFile {
-  constructor(file) {
-    this.file = file
-    this.id = `${file.name}-${file.size}-${file.lastModified}-${file.type}`
-    this.url = URL.createObjectURL(file)
-    this.status = null
-  }
+    constructor(file) {
+        this.file = file
+        this.id = `${file.name}-${file.size}-${file.lastModified}-${file.type}`
+        this.url = URL.createObjectURL(file)
+        this.status = null
+    }
 }
 
 onMounted(() => {
-  events.forEach((eventName) => {
-    document.body.addEventListener(eventName, (e) => {
-      e.preventDefault()
+    events.forEach((eventName) => {
+        document.body.addEventListener(eventName, (e) => {
+            e.preventDefault()
+        })
     })
-  })
 })
 
 onUnmounted(() => {
-  events.forEach((eventName) => {
-    document.body.removeEventListener(eventName, (e) => {
-      e.preventDefault()
+    events.forEach((eventName) => {
+        document.body.removeEventListener(eventName, (e) => {
+            e.preventDefault()
+        })
     })
-  })
 })
 </script>
 
 <template>
-  <div v-if="files.length">
-    <div v-for="file of files" :key="file.id" class="file-ready">
-      <div>
-        <img src="/img/file.svg" /> {{ file.file.name }}
-      </div>
+    <div v-if="files.length">
+        <div v-for="file of files" :key="file.id" class="file-ready">
+            <div>
+                <img src="/img/file.svg"/> {{ file.file.name }}
+            </div>
 
-      <Button remove small @click="removeFile(file)">Удалить</Button>
+            <Button remove small @click="removeFile(file)">Удалить</Button>
+        </div>
     </div>
-  </div>
-  <div
-    v-else
-    :class="{
+    <div
+        v-else
+        :class="{
       'file-upload': true,
       'active': active
     }"
-    :data-active="active"
-    @dragenter.prevent="setActive"
-    @dragover.prevent="setActive"
-    @dragleave.prevent="setInactive"
-    @drop.prevent="addFiles"
-  >
-    <label for="file-input">
-      <span v-if="active" />
-      <div v-else class="file-input-wrapper">
-        <img src="/img/upload.svg" />
-          <div class="file-input__text">
-            <span>Загрузите</span> или перетащите файл резюме
-          </div>
-          <p>Doc, PDF до 5MB</p>
-      </div>
+        :data-active="active"
+        @dragenter.prevent="setActive"
+        @dragover.prevent="setActive"
+        @dragleave.prevent="setInactive"
+        @drop.prevent="addFiles"
+    >
+        <label for="file-input">
+            <span v-if="active"/>
+            <div v-else class="file-input-wrapper">
+                <img src="/img/upload.svg"/>
+                <div class="file-input__text">
+                    <span>Загрузите</span> или перетащите файл резюме
+                </div>
+                <p>Doc, PDF до 5MB</p>
+            </div>
 
-      <input type="file" id="file-input" size="" accept="application/pdf,.doc,.docx," multiple @change="onInputChange" hidden/>
-    </label>
-  </div>
+            <input type="file" id="file-input" size="" accept="application/pdf,.doc,.docx," multiple
+                   @change="onInputChange" hidden/>
+        </label>
+    </div>
 </template>
 
 <style lang="scss" scoped>
-  .file-ready {
+.file-ready {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -137,9 +142,9 @@ onUnmounted(() => {
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #E5E5E5;
-  }
+}
 
-  .file-upload {
+.file-upload {
     width: 100%;
     min-height: 124px;
     border: 1px solid #E5E5E5;
@@ -149,38 +154,38 @@ onUnmounted(() => {
     transition: all .3s;
 
     label {
-      cursor: pointer;
+        cursor: pointer;
     }
 
     &.active {
-      border-color: rgba(165, 180, 252, 0.99);
-      background: #A5B4FC4A;
+        border-color: rgba(165, 180, 252, 0.99);
+        background: #A5B4FC4A;
     }
-  }
+}
 
-  .file-input {
+.file-input {
     &-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-      p {
-        color: var(--second-text-color);
-        font-size: 14px;
-      }
+        p {
+            color: var(--second-text-color);
+            font-size: 14px;
+        }
     }
 
     &__text {
-      padding: 12px 0 8px;
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--title-text-color);
-      line-height: 24px;
+        padding: 12px 0 8px;
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--title-text-color);
+        line-height: 24px;
 
-      span {
-        color: #6366F1;
-      }
+        span {
+            color: #6366F1;
+        }
     }
-  }
+}
 </style>

@@ -21,6 +21,28 @@ const fetchPost = async () => {
     })
 }
 
+const updateMessage = async (id) => {
+    try {
+        await runTransaction(db, async transaction => {
+            const sfDoc = await transaction.get(doc(db, "mails", "message"));
+            posts.value = sfDoc.data().posts.reverse()
+
+            transaction.update(doc(db, "mails", "message"), { posts: sfDoc.data().posts.map(el => {
+                    if (el.id === Number(id)) {
+                        return {
+                            ...el,
+                            favorites: !el.favorites
+                        }
+                    }
+
+                    return el
+                }) });
+        })
+    } finally {
+        fetchPost()
+    }
+}
+
 onMounted(() => {
     fetchPost()
 })
@@ -33,7 +55,7 @@ onMounted(() => {
 
     <div class="ui-mail">
         <div v-for="item in posts" :key="item.id" :class="{'ui-mail-line': true, 'ui-mail-line__isRead': item.isRead}">
-            <div class="ui-mail-line__item ui-mail-line-center">
+            <div class="ui-mail-line__item ui-mail-line-center" @click="updateMessage(item.id)">
                 <v-icon v-if="item.favorites" icon="mdi-star" class="ui-mail-line__star" />
                 <v-icon v-else icon="mdi-star-outline" class="ui-mail-line__star" />
             </div>
@@ -64,6 +86,11 @@ onMounted(() => {
         padding: 20px;
         border-bottom: 1px solid rgba(211, 211, 211, 0.89);
         background: #86ff6454;
+        transition: all .3s;
+
+        &:hover {
+            background: #f3eeb9;
+        }
 
         &-center {
             display: flex;

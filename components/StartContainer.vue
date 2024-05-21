@@ -1,10 +1,17 @@
 <script setup>
-    import { ref } from "@vue/reactivity"
+    import { ref, onMounted } from "vue";
 
-    const slides = [2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    const slides = ref([2,3,4,5,6,7,8,9,10,11,12,13,14,15])
 
     const openMakeRequest = ref(false)
     const openCallback = ref(false)
+
+    onMounted(() => {
+        if (window.innerWidth < 540) {
+            slides.value = [1,2,3,4,5]
+            slides.value = slides.value.map(el => 'mob-' + el)
+        }
+    })
 </script>
 
 <template>

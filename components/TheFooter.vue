@@ -292,7 +292,6 @@
         }
 
         span {
-          word-break: break-all;
           width: auto;
         }
       }
@@ -309,7 +308,7 @@
       }
     }
 
-    @media (max-width: 414px) {
+    @media (max-width: 460px) {
       padding: 32px 0;
 
       .footer-wrapper {
@@ -335,6 +334,14 @@
         gap: 20px;
       }
     }
+
+      @media (max-width: 460px) {
+          &-item {
+              span {
+
+              }
+          }
+      }
   }
 
   .modal-docs {
