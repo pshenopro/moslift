@@ -24,7 +24,7 @@
               <NuxtLink to="/">Главная</NuxtLink>
               <NuxtLink :to="{ path:'/',  hash: '#uslugi' }" :external="true">Услуги</NuxtLink>
               <NuxtLink to="/about">О нас</NuxtLink>
-              <NuxtLink to="/shop">Магазин</NuxtLink>
+              <NuxtLink v-if="false" to="/shop">Магазин</NuxtLink>
               <NuxtLink :to="{ hash: '#contact' }" :external="true">Контакты</NuxtLink>
               <NuxtLink to="/vacancies">Вакансии</NuxtLink>
             </div>
@@ -56,7 +56,7 @@
               <NuxtLink to="/">Главная</NuxtLink>
               <NuxtLink :to="{ path:'/',  hash: '#uslugi' }" :external="true">Услуги</NuxtLink>
               <NuxtLink to="/about">О нас</NuxtLink>
-              <NuxtLink to="/shop">Магазин</NuxtLink>
+              <NuxtLink v-if="false" to="/shop">Магазин</NuxtLink>
               <NuxtLink :to="{ hash: '#contact' }" :external="true">Контакты</NuxtLink>
               <NuxtLink to="/vacancies">Вакансии</NuxtLink>
 
