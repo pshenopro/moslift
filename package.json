@@ -31,7 +31,6 @@
     "nuxt-mail": "^5.0.1",
     "nuxt-snackbar": "^1.0.4",
     "nuxt-swiper": "^1.2.2",
-    "nuxt-vuefire": "^1.0.2",
     "validator": "^13.11.0",
     "vue": "^3.4.19",
     "vue-email": "^0.8.11",
