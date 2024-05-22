@@ -14,10 +14,6 @@
         {
           text: 'Вакансии',
           href: '/vacancies'
-        },
-        {
-          text: 'Магазин',
-          href: '/shop'
         }
       ]
     },
