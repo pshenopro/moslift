@@ -11,6 +11,9 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     'nuxt-snackbar'
   ],
+  site: {
+    url: 'https://modtfilservice-liftdom.ru',
+  },
   nitro: {
     output: {
       publicDir: path.join(__dirname, '/dist')

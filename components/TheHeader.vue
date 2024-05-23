@@ -13,6 +13,13 @@
 </script>
 
 <template>
+    <Head>
+        <Title>Модтфил-Сервис - Комплексное обслуживание лифтов и эскалаторов</Title>
+        <Meta name="description" content="Модтфил-Сервис - Комплексное обслуживание лифтов и эскалаторов" />
+        <Meta name="robots" content="index,follow" />
+        <Meta property="og:title" content="Модтфил-Сервис - Комплексное обслуживание лифтов и эскалаторов" />
+        <Meta property="og:type" content="article" />
+    </Head>
     <header>
         <div class="main-wrapper">
           <nav class="main-nav">

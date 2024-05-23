@@ -16,7 +16,6 @@ const openCallback = ref(false)
     <Title>{{ data?.title }}</Title>
     <Meta name="description" :content="data?.desc" />
   </Head>
-
   <section class="main-wrapper uslugi-page">
     <template v-if="!data">
       <h2>Ошибка</h2>

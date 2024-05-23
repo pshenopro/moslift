@@ -91,7 +91,7 @@ const send = async () => {
           class="mb32"
       />
 
-      <UiFileupload class="file-upload" @onChange="data.files = $event" /> />
+      <UiFileupload class="file-upload" @onChange="data.files = $event" />
 
       <div class="btn-wrapper mt16">
         <Button primary @click="send">Откликнуться</Button>
