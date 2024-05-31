@@ -26,15 +26,19 @@ const fetchlogin = async () => {
   state.loading = true
 
   try {
-    const data = await signInWithEmailAndPassword(auth, state.email, state.password)
+    const { user } = await signInWithEmailAndPassword(auth, state.email, state.password)
 
     state.loading = false
+    localStorage.setItem('user', JSON.stringify({
+        ...user,
+        name: user.email?.split('@')?.[0] || user.email
+    }))
     router.push('/home')
   } catch (e) {
-    toast("Ошибка авторизации", {
-      autoClose: 1000,
-      position: toast.POSITION.TOP_RIGHT,
-    });
+    // toast("Ошибка авторизации", {
+    //   autoClose: 1000,
+    //   position: toast.POSITION.TOP_RIGHT,
+    // });
   } finally {
     state.loading = false
   }

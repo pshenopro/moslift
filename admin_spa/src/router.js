@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    redirect: 'login',
+    redirect: '/login',
   },
   {
     path: '/login',
@@ -28,6 +28,11 @@ const routes = [
         path: '/profile',
         name: 'profile',
         component: () => import('./pages/Profile.vue'),
+      },
+      {
+        path: '/favorite',
+        name: 'favorite',
+        component: () => import('./pages/Favorite.vue'),
       }
     ]
   },
@@ -48,8 +53,16 @@ const router = createRouter({
   }
 })
 
-router.beforeEach(to => {
-  return true
+router.beforeEach(async (to, from, next) => {
+  const profile = JSON.parse(localStorage.getItem('user'))
+
+  if (!profile?.name) {
+    if (to.name !== 'login') {
+      next('/login')
+    }
+  }
+
+  next()
 })
 
 // const checkToken = (token: string | null):boolean => {
