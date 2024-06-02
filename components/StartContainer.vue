@@ -44,7 +44,7 @@
             v-for="(slide, i) in slides"
             :key="i"
             :style="{
-                'background-image': `url(/img/start-slide-${slide}.png)`
+                'background-image': `url(/img/start-slide-${slide}.webp)`
             }"
         >
             <div class="drop-shadow-img" />
