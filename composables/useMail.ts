@@ -38,6 +38,19 @@ export const useMail = () => {
           }) });
       })
 
+      await runTransaction(db, async transaction => {
+        const sfDoc = await transaction.get(doc(db, "mails", "archive"));
+        transaction.update(doc(db, "mails", "archive"), { posts: sfDoc.data().posts.concat({
+            favorites: false,
+            fileName: data.files || [],
+            header: subject,
+            html: parseHtml(data),
+            id: Date.now(),
+            isRead: false,
+            text: data.comment || data.textArea || ''
+          }) });
+      })
+
       snackbar.clear()
 
       snackbar.add({

@@ -3,10 +3,12 @@ import { ref } from "@vue/reactivity";
 
 import { UslugiList } from '/constants'
 
-  const data = ref({
+const sendMail = useMail()
+
+const data = ref({
     valid: false,
-    firstname: '',
-    textArea: '',
+    name: '',
+    comment: '',
     usluga: '',
     uslugaItems: UslugiList.map(el => el.title),
     nameRules: [
@@ -33,11 +35,18 @@ import { UslugiList } from '/constants'
         return 'E-mail must be valid.'
       },
     ],
-  })
+})
+const isLoad = ref(false)
 
-  const submit = (values => {
-    alert(JSON.stringify(values, null, 2))
-  })
+const send = async () => {
+    isLoad.value = true
+
+    try {
+        await sendMail('Заказать звонок', data.value)
+    } finally {
+        isLoad.value = false
+    }
+}
 </script>
 
 <template>
@@ -65,9 +74,9 @@ import { UslugiList } from '/constants'
         </p>
       </div>
 
-      <form @submit.prevent="submit" class="question-form__f">
+      <form class="question-form__f">
         <UiInput
-          v-model="data.firstname"
+          v-model="data.name"
           label="Как вас зовут?"
           placeholder="Алексей"
           class="mb32"
@@ -89,7 +98,7 @@ import { UslugiList } from '/constants'
         />
 
         <UiTextarea
-          v-model="data.textArea"
+          v-model="data.comment"
           label="Опишите ваш запрос"
           placeholder="Текст обращения..."
           :count-size="300"
@@ -99,6 +108,8 @@ import { UslugiList } from '/constants'
         <div class="form-submit">
           <Button
             primary
+            :disabled="isLoad"
+            @click="send"
           >
             Оставить заявку
           </Button>
