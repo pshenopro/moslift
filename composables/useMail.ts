@@ -17,13 +17,10 @@ export const useMail = () => {
 
     try {
       // await axios.post('http://31.129.43.97:8080/email', {
-      //   html: parseHtml(data),
-      //   subject
-      // })
-
-      // await setDoc(doc(db, "mails", "message"), {
-      //   arr: ['222', '333']
-      // }, { merge: true });
+      await axios.post('http://localhost:8080/email', {
+        html: parseHtml(data),
+        subject
+      })
 
       await runTransaction(db, async transaction => {
         const sfDoc = await transaction.get(doc(db, "mails", "message"));
