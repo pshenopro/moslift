@@ -16,14 +16,14 @@ export const useMail = () => {
     })
 
     try {
-      await axios.post('http://31.129.43.97:8080/email', {
-        subject,
-        text: data.comment || '',
-        usluga: data.usluga || null,
-        name: data.name || null,
-        email: data.email || null
-
-      })
+      // await axios.post('http://31.129.43.97:8080/email', {
+      //   subject,
+      //   text: data.comment || '',
+      //   usluga: data.usluga || null,
+      //   name: data.name || null,
+      //   email: data.email || null
+      //
+      // })
 
       await runTransaction(db, async transaction => {
         const sfDoc = await transaction.get(doc(db, "mails", "message"));
