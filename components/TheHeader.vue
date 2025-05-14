@@ -28,12 +28,13 @@
             </NuxtLink>
 
             <div class="main-nav-routes">
-              <NuxtLink to="/">Главная</NuxtLink>
-              <NuxtLink :to="{ path:'/',  hash: '#uslugi' }" :external="true">Услуги</NuxtLink>
-              <NuxtLink to="/about">О нас</NuxtLink>
-              <NuxtLink v-if="false" to="/shop">Магазин</NuxtLink>
-              <NuxtLink :to="{ hash: '#contact' }" :external="true">Контакты</NuxtLink>
-              <NuxtLink to="/vacancies">Вакансии</NuxtLink>
+                <NuxtLink to="/">Главная</NuxtLink>
+                <NuxtLink :to="{ path:'/',  hash: '#uslugi' }" :external="true">Услуги</NuxtLink>
+                <NuxtLink to="/about">О нас</NuxtLink>
+                <NuxtLink v-if="false" to="/shop">Магазин</NuxtLink>
+                <NuxtLink :to="{ hash: '#contact' }" :external="true">Контакты</NuxtLink>
+                <NuxtLink to="/education">Образование</NuxtLink>
+                <NuxtLink to="/vacancies">Вакансии</NuxtLink>
             </div>
 
             <div class="main-nav-btns">
@@ -60,12 +61,13 @@
             </div>
 
             <div class="menu__box" @click="menu = false">
-              <NuxtLink to="/">Главная</NuxtLink>
-              <NuxtLink :to="{ path:'/',  hash: '#uslugi' }" :external="true">Услуги</NuxtLink>
-              <NuxtLink to="/about">О нас</NuxtLink>
-              <NuxtLink v-if="false" to="/shop">Магазин</NuxtLink>
-              <NuxtLink :to="{ hash: '#contact' }" :external="true">Контакты</NuxtLink>
-              <NuxtLink to="/vacancies">Вакансии</NuxtLink>
+                <NuxtLink to="/">Главная</NuxtLink>
+                <NuxtLink :to="{ path:'/',  hash: '#uslugi' }" :external="true">Услуги</NuxtLink>
+                <NuxtLink to="/about">О нас</NuxtLink>
+                <NuxtLink v-if="false" to="/shop">Магазин</NuxtLink>
+                <NuxtLink :to="{ hash: '#contact' }" :external="true">Контакты</NuxtLink>
+                <NuxtLink to="/education">Образование</NuxtLink>
+                <NuxtLink to="/vacancies">Вакансии</NuxtLink>
 
               <v-divider />
               <div class="main-nav-btns">
