@@ -38,8 +38,8 @@
             </div>
 
             <div class="main-nav-btns">
-              <Button primary small @click="openMakeRequest = true">Оформить заявку</Button>
-              <Button second small @click="openCallback = true">Заказать звонок</Button>
+              <Button v-if="false" primary small @click="openMakeRequest = true">Оформить заявку</Button>
+              <Button v-if="false" second small @click="openCallback = true">Заказать звонок</Button>
             </div>
 
             <SecondLogo />
@@ -71,8 +71,8 @@
 
               <v-divider />
               <div class="main-nav-btns">
-                <Button primary small @click="openMakeRequest = true">Оформить заявку</Button>
-                <Button second small @click="openCallback = true">Заказать звонок</Button>
+                <Button v-if="false" primary small @click="openMakeRequest = true">Оформить заявку</Button>
+                <Button v-if="false" second small @click="openCallback = true">Заказать звонок</Button>
               </div>
             </div>
           </nav>

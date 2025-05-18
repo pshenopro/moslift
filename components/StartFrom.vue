@@ -74,7 +74,7 @@ const send = async () => {
         </p>
       </div>
 
-      <form class="question-form__f">
+      <form v-if="false" class="question-form__f">
         <UiInput
           v-model="data.name"
           label="Как вас зовут?"

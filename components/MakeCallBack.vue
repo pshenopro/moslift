@@ -91,7 +91,7 @@ const send = async () => {
           class="mb16"
       />
 
-      <div class="btn-wrapper mt16">
+      <div v-if="false" class="btn-wrapper mt16">
         <Button primary @click="send">Заказать звонок</Button>
         <div class="description">
           Заказывая звонок, я принимаю условия политики конфиденциальности

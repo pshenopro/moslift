@@ -37,7 +37,7 @@ const send = async () => {
       <img class="about-pic" src="/img/about-page.webp" alt="О нас" />
     </div>
 
-    <div class="about-callback">
+    <div v-if="false" class="about-callback">
       <h6>Хочешь стать частью нашей команды?</h6>
       <p>Мы всегда рады новым талантам и готовы к сотрудничеству.</p>
       <Button class="about-btn" third small @click="dialog = true">Написать</Button>

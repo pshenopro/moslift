@@ -69,8 +69,8 @@ const openCallback = ref(false)
         <p>{{ props.data.text }}</p>
 
         <div class="swiper-slide__btns">
-          <Button primary @click="openMakeRequest = true">Оформить заявку</Button>
-          <Button second @click="openCallback = true">Заказать звонок</Button>
+          <Button v-if="false" primary @click="openMakeRequest = true">Оформить заявку</Button>
+          <Button v-if="false" second @click="openCallback = true">Заказать звонок</Button>
         </div>
       </div>
     </div>

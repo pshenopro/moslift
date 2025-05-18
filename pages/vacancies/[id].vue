@@ -35,7 +35,7 @@
         <div class="back" @click="router.back()">Назад</div>
         <h1>{{ data.title }}</h1>
         <p v-html="data.desc" />
-        <Button primary @click="dialog = true">Откликнуться</Button>
+        <Button v-if="false" primary @click="dialog = true">Откликнуться</Button>
       </template>
     </div>
   </section>

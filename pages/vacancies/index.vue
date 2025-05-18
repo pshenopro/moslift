@@ -44,7 +44,7 @@
           </div>
         </NuxtLink>
 
-        <Button class="mt16" third bg="#6366F1" color="#fff" @click="dialog=true">Откликнуться</Button>
+        <Button v-if="false"  class="mt16" third bg="#6366F1" color="#fff" @click="dialog=true">Откликнуться</Button>
       </div>
     </div>
   </div>

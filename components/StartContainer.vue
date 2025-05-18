@@ -53,8 +53,8 @@
       <div class="main-wrapper">
         <h2 v-html="'Комплексное <br /> обслуживание лифтов <br />и эскалаторов'" />
         <div class="slider-bts">
-          <Button primary @click="openMakeRequest = true">Оставить заявку</Button>
-          <Button third @click="openCallback = true">Заказать звонок</Button>
+          <Button v-if="false" primary @click="openMakeRequest = true">Оставить заявку</Button>
+          <Button v-if="false" third @click="openCallback = true">Заказать звонок</Button>
         </div>
 
         <div class="swiper-nav">
