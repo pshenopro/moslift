@@ -9,6 +9,8 @@ interface Props {
     bg?: string,
     color?: string
     remove?: boolean
+    download?: boolean
+    href?: string
 }
 
 const props = defineProps<Props>()
@@ -18,6 +20,7 @@ const props = defineProps<Props>()
 <template>
     <v-btn
         :outlined="second"
+        :href="href"
         :class="{
             'primary': primary,
             'second': second,

@@ -67,6 +67,19 @@
                 <div class="right">не имеется</div>
             </div>
         </div>
+
+        <h2 class="pb-4">Образовательные программы</h2>
+
+        <div class="table">
+            <div class="row">
+                <div class="left">
+                    Программа профессионального обучения "Лифтер"
+                </div>
+                <div class="right center">
+                    <Button small href="/edu/Профессиональное_Обучение_Лифтер.pdf" bg="#6366F1" color="#fff" download>Скачать</Button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -77,6 +90,7 @@
         padding: 20px;
         border-radius: 10px;
         border: rgba(0, 0, 0, 0.2) solid 1px;
+        margin-bottom: 40px;
 
         .row {
             display: flex;
@@ -114,6 +128,11 @@
             width: 30%;
             padding-left: 20px;
             line-height: 1;
+
+            &.center {
+                display: flex;
+                justify-content: flex-end;
+            }
 
             li {
                 padding-bottom: 10px;
