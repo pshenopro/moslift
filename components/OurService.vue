@@ -1,21 +1,5 @@
 <script lang="ts" setup>
 import { UslugiList } from '/constants'
-
-const swiperInstance = ref()
-
-const stopAutoplay = () => {
-    console.log(swiperInstance.value)
-
-    if (swiperInstance.value?.autoplay) {
-        swiperInstance.value.stop();
-    }
-};
-
-const startAutoplay = () => {
-    if (swiperInstance.value?.autoplay) {
-        swiperInstance.value.swiper.autoplay.start();
-    }
-};
 </script>
 
 <template>
@@ -23,7 +7,6 @@ const startAutoplay = () => {
     <h2>Наши услуги</h2>
 
     <Swiper
-        ref="swiperInstance"
         :modules="[SwiperAutoplay]"
         :slides-per-view="1"
         :breakpoints="{
