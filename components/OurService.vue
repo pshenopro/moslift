@@ -1,5 +1,21 @@
 <script lang="ts" setup>
 import { UslugiList } from '/constants'
+
+const swiperInstance = ref()
+
+const stopAutoplay = () => {
+    console.log(swiperInstance.value)
+
+    if (swiperInstance.value?.autoplay) {
+        swiperInstance.value.stop();
+    }
+};
+
+const startAutoplay = () => {
+    if (swiperInstance.value?.autoplay) {
+        swiperInstance.value.swiper.autoplay.start();
+    }
+};
 </script>
 
 <template>
@@ -7,6 +23,7 @@ import { UslugiList } from '/constants'
     <h2>Наши услуги</h2>
 
     <Swiper
+        ref="swiperInstance"
         :modules="[SwiperAutoplay]"
         :slides-per-view="1"
         :breakpoints="{
@@ -22,8 +39,9 @@ import { UslugiList } from '/constants'
         }"
         :effect="'creative'"
         :autoplay="{
-            delay: 8000,
+            delay: 800,
             disableOnInteraction: true,
+            pauseOnMouseEnter: true
         }"
         :creative-effect="{
             prev: {
