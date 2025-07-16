@@ -85,7 +85,7 @@
                     Дополнительная профессиональная программа повышения квалификации "Менеджер по персоналу: система управления персоналом в организации"
                 </div>
                 <div class="right center">
-                    <Button small href="/ДПО_Менеджер_по_персоналу.pdf" bg="#6366F1" color="#fff" download>Скачать</Button>
+                    <Button small href="/edu/ДПО_Менеджер_по_персоналу.pdf" bg="#6366F1" color="#fff" download>Скачать</Button>
                 </div>
             </div>
         </div>
