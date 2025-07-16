@@ -79,6 +79,15 @@
                     <Button small href="/edu/Профессиональное_Обучение_Лифтер.pdf" bg="#6366F1" color="#fff" download>Скачать</Button>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="left">
+                    Дополнительная профессиональная программа повышения квалификации "Менеджер по персоналу: система управления персоналом в организации"
+                </div>
+                <div class="right center">
+                    <Button small href="/ДПО_Менеджер_по_персоналу.pdf" bg="#6366F1" color="#fff" download>Скачать</Button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -95,6 +104,7 @@
         .row {
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
             padding-bottom: 30px;
             padding-top: 30px;
             border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
