@@ -14,10 +14,11 @@ export default defineNuxtConfig({
   site: {
     url: 'https://modtfilservice-liftdom.ru',
   },
-  nitro: {
-    output: {
-      publicDir: path.join(__dirname, '/dist')
-    }
+ nitro: {
+    publicAssets: [
+      { dir: 'assets', baseURL: '/assets' },
+      { dir: 'assets/img', baseURL: '/dist/img' }
+    ]
   },
   alias: {
     "@": resolve(__dirname, "/")
