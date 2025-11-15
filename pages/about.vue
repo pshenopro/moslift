@@ -3,7 +3,7 @@ import {reactive, ref} from "@vue/reactivity";
 
   import { VacList } from '/constants'
 
-const sendMail = useMail()
+// const sendMail = useMail()
 const dialog = ref(false)
   const data = reactive({
     name: '',
@@ -14,7 +14,7 @@ const dialog = ref(false)
 
 const send = async () => {
   try {
-    await sendMail('Хочешь стать частью нашей команды?', data)
+    // await sendMail('Хочешь стать частью нашей команды?', data)
   } finally {
     dialog.value = false
   }

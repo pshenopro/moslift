@@ -7,7 +7,7 @@
 
   const data = computed(() => VacList.find(el => el.id === route.params.id))
 
-  const sendMail = useMail()
+  // const sendMail = useMail()
   const dialog = ref(false)
   const state = reactive({
     name: '',
@@ -18,7 +18,7 @@
 
   const send = async () => {
     try {
-      await sendMail('Резюме', data)
+      // await sendMail('Резюме', data)
     } finally {
       dialog.value = false
     }

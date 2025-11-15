@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {reactive, ref} from "@vue/reactivity";
-import {updateFile} from '/composables/useFiles'
+// import {updateFile} from '/composables/useFiles'
 
 const emit = defineEmits(['files-dropped', 'onChange'])
 
@@ -33,7 +33,7 @@ const addFiles = (newFiles) => {
     files.value = files.value.concat(newUploadableFiles)
 
     files.value.forEach(el => {
-        updateFile(el.file)
+        // updateFile(el.file)
         filesName.value.push(el.file.name)
     })
 
@@ -62,7 +62,7 @@ const onInputChange = (e) => {
     e.target.value = null
 
     files.value.forEach(el => {
-        updateFile(el.file)
+        // updateFile(el.file)
         filesName.value.push(el.file.name)
     })
 

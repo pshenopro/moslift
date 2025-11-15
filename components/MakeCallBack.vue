@@ -3,7 +3,7 @@ import { ref, reactive, computed } from "@vue/reactivity";
 import { defineProps, defineEmits } from 'vue'
 
 import { UslugiList } from '/constants'
-const sendMail = useMail()
+// const sendMail = useMail()
 
 interface Props {
   modalUpdated: boolean
@@ -26,7 +26,7 @@ const modal = computed(() => {
 
 const send = async () => {
   try {
-    await sendMail('Заказать звонок', data)
+    // await sendMail('Заказать звонок', data)
   } finally {
     emit('updateModal')
   }

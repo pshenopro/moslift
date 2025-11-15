@@ -10,11 +10,11 @@
     vac: '',
     comment: ''
   })
-  const sendMail = useMail()
+  // const sendMail = useMail()
 
   const send = async () => {
     try {
-      await sendMail('Резюме', data)
+      // await sendMail('Резюме', data)
     } finally {
       dialog.value = false
     }

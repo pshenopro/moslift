@@ -3,7 +3,7 @@ import { ref } from "@vue/reactivity";
 
 import { UslugiList } from '/constants'
 
-const sendMail = useMail()
+// const sendMail = useMail()
 
 const data = ref({
     valid: false,
@@ -42,7 +42,7 @@ const send = async () => {
     isLoad.value = true
 
     try {
-        await sendMail('Заказать звонок', data.value)
+        // await sendMail('Заказать звонок', data.value)
     } finally {
         isLoad.value = false
     }

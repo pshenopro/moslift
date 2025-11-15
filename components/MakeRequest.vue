@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { ref, reactive, computed } from "@vue/reactivity";
+  import { reactive, computed } from "@vue/reactivity";
   import { defineProps, defineEmits } from 'vue'
 
   import { UslugiList } from '/constants'
@@ -8,7 +8,7 @@
     modalUpdated: boolean
   }
 
-  const sendMail = useMail()
+  // const sendMail = useMail()
   const props = defineProps<Props>()
   const emit = defineEmits(['updateModal'])
 
@@ -31,7 +31,7 @@
 
   const send = async () => {
     try {
-      await sendMail('Заявка', data)
+      // await sendMail('Заявка', data)
     } finally {
       emit('updateModal')
     }
