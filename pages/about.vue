@@ -122,7 +122,7 @@ const send = async () => {
       margin-right: 80px;
 
       h1 {
-        font-weight: 800;
+        font-weight: 700;
         font-size: 36px;
         line-height: 44px;
         padding-bottom: 48px;

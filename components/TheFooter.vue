@@ -389,7 +389,7 @@
     background-color: #FAFAFA;
 
     h3 {
-      font-weight: 800;
+      font-weight: 700;
       font-size: 36px;
       padding-bottom: 32px;
     }

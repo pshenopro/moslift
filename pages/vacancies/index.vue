@@ -200,7 +200,7 @@
 
       h6 {
         color: var(--title-text-color);
-        font-weight: 800;
+        font-weight: 700;
         font-size: 20px;
         line-height: 28px;
         padding-bottom: 16px;
@@ -219,7 +219,7 @@
         color: var(--title-text-color);
         font-size: 36px;
         line-height: 44px;
-        font-weight: 800;
+        font-weight: 700;
         padding-bottom: 16px;
       }
 

@@ -179,7 +179,7 @@ onUnmounted(() => {
     &__text {
         padding: 12px 0 8px;
         font-size: 16px;
-        font-weight: 800;
+        font-weight: 700;
         color: var(--title-text-color);
         line-height: 24px;
 

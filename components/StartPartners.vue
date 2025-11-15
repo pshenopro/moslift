@@ -80,7 +80,7 @@
     h2 {
       padding-bottom: 64px;
       font-size: 36px;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     @media (max-width: 540px) {
